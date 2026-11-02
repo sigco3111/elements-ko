@@ -7,7 +7,7 @@ engine: three
 
 39 real-time elemental spells for three.js in WebGL2: fire, ice, lightning, wind, water, earth, void, light, acid and arcane, each simulated on the GPU and tunable, cast at a click. Ultra Elements by Humpalumps, set up for games by Patch.
 
-It's [Ultra Elements](https://github.com/Humpalumps/ultra-elements) by Humpalumps (MIT), from the author of Ultra-Water, with a smaller page and a library around it. In the live demo, click anywhere on the training ground to cast the chosen spell there, drag to look around and scroll to zoom. Until your first click it casts by itself.
+It's [Ultra Elements](https://github.com/Humpalumps/ultra-elements) by Humpalumps (MIT), from the author of Ultra-Water, with a smaller page and a library around it. In the live demo, click anywhere on the training ground at dusk to cast the chosen spell there, drag to look around and scroll to zoom. Until your first click it casts by itself.
 
 ## The spells
 
@@ -40,11 +40,7 @@ const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 40
 const elements = await createElements({ renderer, camera, sky: 'dusk' });
 elements.setSize(innerWidth, innerHeight);
 
-// behind your loading screen (see Warm it up)
-elements.linkEverySpell();
-await elements.warmCore();
-await elements.warmSpell(elements.entryOf('Fireball').spell);
-elements.warmRest();
+await elements.warmAll({ onProgress: showLoadingBar });   // behind your loading screen (see Warm it up)
 
 elements.cast('Fireball', new THREE.Vector3(0, 1, 0), { from: playerHand });
 
@@ -54,7 +50,7 @@ renderer.setAnimationLoop(() => elements.render(clock.getDelta()));
 - `cast(name, point, { from, target, held })`: `name` is a spell's name from the table, `from` where it starts (default: the orb on the training ground), `held` keeps a beam going until `casts.releaseHeld()`. A spell that isn't warm yet casts the moment it is, never stalling a frame.
 - `pick(x, y)` turns a pointer at -1 to 1 into a point on the ground, for click-to-cast.
 - `setParam(spell, key, value)` changes one setting live. `spells.json` lists all 411, every spell's, with ranges, plus each spell's three named looks.
-- `setSky('dusk' | 'noon' | 'night')`, `clear()`, `autoQuality(ms)` (lowers particles, then resolution, when frames are missed), `rig.shake(...)`, `view.timeScale`.
+- `setSky('dusk' | 'noon' | 'night')` (the demo stays at dusk), `clear()`, `autoQuality(ms)` (lowers particles, then resolution, when frames are missed), `rig.shake(...)`, `view.timeScale`.
 
 **Your own world.** `elements.hideArena()` takes away the training ground, then add your things to `elements.arena.group` and call `elements.updateShadow()`, so they're lit by its sky and cast its sun's shadow. `examples/game.js` is a whole game this size (`npm run dev`, then `/examples/game.html`). What stays is that spells are built for flat ground at y = 0, inside 18 m of the middle: they land there, particles bounce there, and only the training ground's own floor shows scorch and frost. Chain Arc and a few others look for the three targets: move them with your enemies (`elements.fx.dummies[0].pos.copy(enemy.position)`), or they stay where they were, unseen.
 
@@ -95,10 +91,11 @@ const elements = await createElements({ renderer, camera, spells: [frostNova] })
 
 ## Warm it up
 
-A cold load (a new browser profile, nothing cached, loaded from Patch's game host) took 18 to 24 s before these changes and takes 6 to 9 s now, with every spell's first cast at 18 ms or less afterwards, on Windows with an RTX 4090. If you're writing your own start-up, these are what made the difference:
+A cold load (a new browser profile, nothing cached, loaded from Patch's game host) took 18 to 24 s before these changes and takes 7 to 10 s now on Windows with an RTX 4090, longer on a busy or slower PC. All of that is behind the loading bar: once the view opens, every spell is warm and nothing heavy runs. If you're writing your own start-up, these are what made the difference:
 
-- **A program's first use blocks until it has linked,** and a simulation shader can take 4 s. So every program starts linking at once (`linkEverySpell`) and nothing is drawn until its link is done. The driver links side by side, and the page keeps going.
-- **On Windows, a shader that draws to several targets at once compiles a second time at its first draw,** on the graphics process's main thread, however it was linked. ANGLE links for one target. Nothing avoids this, so the slowest (`SLOW_FIRST_DRAW` in `elements.js`) go before `ready`, while the core links, and the rest in small slices after it. The particle and swarm simulations here are one output per program for this reason, and draw three and two times a step: a little GPU for a few seconds of loading.
+- **A program's first use blocks until it has linked,** and a simulation shader can take 4 s. So every program starts linking at once and nothing is drawn until its link is done. The driver links side by side, and the page keeps going.
+- **On Windows, a shader that draws to several targets at once compiles a second time at its first draw,** on the graphics process's main thread, however it was linked. ANGLE links for one target. Nothing avoids this, so every first draw happens behind the loading screen (`warmAll`), while the rest link. The particle and swarm simulations here are one output per program for this reason, and draw three and two times a step: a little GPU for a few seconds of loading.
+- **Commands are queued, so JavaScript finishing isn't the GPU finishing.** A view revealed then can sit frozen behind the backlog. Wait on a fence (`gpuFence`) before you open the view. The demo also draws real frames with its canvas hidden until they come on time.
 
 ## Controls
 
@@ -112,16 +109,16 @@ The block page talks to the demo over the `patch-block` message channel (`lib/pa
 | `size` | Size | number | 0.4 to 2 ×, default 1 | How big each cast is. |
 | `intensity` | Intensity | number | 0.25 to 2.5 ×, default 1 | How strong and bright each cast is. |
 | `speed` | Speed | number | 0.1 to 2 ×, default 1 | How fast everything plays: below 1 is slow motion. |
-| `sky` | Sky | choice | Dusk, Noon, Night, with pictures; default Dusk | The time of day over the training ground. |
 
 Size and Intensity mean different settings in each spell (`tuning.js` says which), and each setting stays within its own range, so a few spells stop growing before 2 ×.
 
 **Trigger:** Clear (`clear`) takes away every cast, the scorch and frost on the floor and what the targets took.
 
-**For agents** (32 more, in `recipe.json` with every range and default):
+**For agents** (33 more, in `recipe.json` with every range and default):
 
 | id | What it does |
 |---|---|
+| `sky` | `dusk` (default), `noon` or `night`. People always see dusk |
 | `look` | One of the spell's three named looks (`first`, `second`, `third`; their names are in `spells.json`), or `own` |
 | `auto`, `auto.all` | Keep casting the chosen spell, or every spell in turn |
 | `shake`, `reduced` | How much big impacts shake the camera; reduce flashes and shake |

@@ -24,11 +24,7 @@ elements.arena.group.add(floor, box);
 elements.updateShadow();
 
 // Warm up behind your loading screen: nothing below stalls a frame once this is done.
-elements.linkEverySpell();
-await elements.warmCore();
-await elements.warmSpell(elements.entryOf('Fireball').spell);
-await elements.warmSpell(elements.entryOf('Frost Nova').spell);
-elements.warmRest();
+await elements.warmAll({ onProgress: (p) => console.log(`loading ${Math.round(p * 100)}%`) });
 
 const hand = new THREE.Vector3(0, 1.4, 9);
 let spell = 'Fireball';

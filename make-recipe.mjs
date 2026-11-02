@@ -81,11 +81,10 @@ const recipe = {
 			{
 				id: 'sky',
 				label: 'Sky',
-				hint: 'The time of day over the training ground.',
+				hint: 'The time of day over the training ground. People always see dusk.',
 				type: 'choice',
-				options: ['dusk', 'noon', 'night'].map((value) => ({ value, label: value[0].toUpperCase() + value.slice(1), ...(images ? { image: `thumbs/sky/${value}.webp` } : {}) })),
+				options: ['dusk', 'noon', 'night'].map((value) => ({ value, label: value[0].toUpperCase() + value.slice(1) })),
 				default: 'dusk',
-				essential: true,
 			},
 			{
 				id: 'look',

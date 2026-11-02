@@ -3,7 +3,10 @@
 // in recipe.json.
 //
 // In the frame: click to cast the chosen spell there, drag to look around, scroll to zoom. Until the
-// first click it casts by itself, so the page is never empty.
+// first click it casts by itself and the view sways a little, so it's alive from its first frame.
+//
+// It says ready only when it's really usable: every spell warm, the GPU caught up and frames running on
+// time. Nothing heavy runs after that. A longer load with a bar beats a view that opens and then freezes.
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { patchBlock } from 'patch-block';
@@ -11,9 +14,8 @@ import { block as recipeBlock } from './recipe.json';
 import { createElements } from './elements.js';
 import { settingsFor, slug } from './tuning.js';
 
-// Ready within this long of starting, however much of the warm-up is done by then (ms). Usually it's done by 7 s; a
-// slower PC waits a little longer here, not freezing once a person is looking at it.
-const READY_BY = 11000;
+// Only a safety for a GPU that never answers (ms): a slow PC waits behind the bar, however long it takes.
+const GIVE_UP = 90000;
 const times = { start: performance.now() };
 const mark = (name) => (times[name] = Math.round(performance.now() - times.start));
 
@@ -59,7 +61,6 @@ const hue = (element) => elements.ELEMENTS.find((e) => e.id === element)?.hue ??
 function choose(value) {
 	spellEntry = elements.ENTRIES.find((e) => slug(e.name) === value) ?? elements.ENTRIES[0];
 	tune(spellEntry.spell);
-	elements.warmFirst(spellEntry.spell);
 	elements.arena.setFocus?.(new THREE.Color(spellEntry.spell.hue), 2.5);
 	hud.querySelector('.name').textContent = spellEntry.name;
 	hud.style.setProperty('--accent', hue(spellEntry.element));
@@ -156,11 +157,14 @@ Object.assign(v, block.values);
 
 // --- casting: a click casts, a drag looks -------------------------------------------------------
 let touched = false; // until the first click the demo casts by itself
-let next = 0.9; // seconds until the next cast by itself
+let next = 0.1; // seconds until the next cast by itself
 let down = null;
+let swaying = true; // until the first touch of the view
 canvas.addEventListener('pointerdown', (e) => {
+	swaying = false;
 	down = { x: e.clientX, y: e.clientY };
 });
+canvas.addEventListener('wheel', () => { swaying = false; }, { passive: true });
 canvas.addEventListener('pointerup', (e) => {
 	if (!down || !spellEntry) return;
 	const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
@@ -175,6 +179,16 @@ canvas.addEventListener('pointerup', (e) => {
 	void hud.offsetWidth;
 	hud.classList.add('cast');
 });
+
+const UP = new THREE.Vector3(0, 1, 0);
+let swayTime = 0, swayed = 0;
+function sway(dt) {
+	if (!swaying) return;
+	swayTime += dt;
+	const to = Math.sin(swayTime * 0.35) * 0.05;
+	camera.position.sub(controls.target).applyAxisAngle(UP, to - swayed).add(controls.target);
+	swayed = to;
+}
 
 function byItself(dt) {
 	if (previewAt > 0 && (previewAt -= dt) <= 0 && !elements.casts.count()) castAtDummy();
@@ -209,6 +223,7 @@ function loop(now) {
 	if (!visible) return;
 	elements.autoQuality(ms);
 	const dt = Math.min(ms / 1000, 0.1);
+	sway(dt);
 	controls.update();
 	byItself(dt * v.speed);
 	elements.render(dt);
@@ -216,27 +231,15 @@ function loop(now) {
 
 // --- start ----------------------------------------------------------------------------------------
 async function start() {
-	elements = await createElements({ renderer, camera, sky: v.sky, onProgress: (p) => block.progress(p * 0.6, 'Building the spells') });
+	elements = await createElements({ renderer, camera, sky: v.sky, onProgress: (p) => block.progress(p * 0.15, 'Building the spells') });
 	mark('built');
 	resize();
 	elements.rig.amount = v.shake;
 	elements.view.timeScale = v.speed;
 	choose(v.spell);
-	elements.linkEverySpell();
-	mark('kicked');
-	// the slowest first draws go on while the core links, when the GPU's main thread is free
-	const slow = elements.warmSlow(times.start + READY_BY);
-	await elements.warmCore();
-	mark('core');
-	block.progress(0.9, 'Warming the spells');
-	await elements.warmSpell(spellEntry.spell);
-	mark('spell');
-	await slow;
-	mark('slow');
-	// the settled view: the exposure and the sky have what they'd have after a while, and what the warm-up drew is gone
-	elements.clear();
-	elements.post._snap = true;
-	for (let i = 0; i < 4; i++) elements.render(1 / 60);
+	await elements.warmAll({ until: times.start + GIVE_UP, onProgress: (p) => block.progress(0.15 + p * 0.8, 'Warming the spells') });
+	mark('warmed');
+	await settle();
 	mark('settled');
 	block.progress(1, 'Warming the spells');
 	canvas.style.visibility = '';
@@ -247,8 +250,27 @@ async function start() {
 	requestAnimationFrame(loop);
 	block.ready();
 	mark('ready');
-	// the rest, in slices between frames; a spell chosen meanwhile goes first
-	if (!location.search.includes('nowarm')) setTimeout(() => elements.warmRest().then(() => mark('allWarm')), 300);
+	mark('allWarm');
+}
+// Real frames with the canvas still hidden, until they come on time: the view opens on what it'll keep doing, with
+// the exposure settled and what the warm-up drew gone. A hidden tab has no frames, so this stops waiting after 3 s.
+function settle() {
+	elements.clear();
+	elements.post._snap = true;
+	return new Promise((done) => {
+		const timer = setTimeout(done, 3000);
+		let calm = 0, was = performance.now();
+		const step = (now) => {
+			calm = now - was < 40 ? calm + 1 : 0;
+			was = now;
+			elements.render(1 / 60);
+			if (calm >= 6) {
+				clearTimeout(timer);
+				elements.gpuFence().then(done);
+			} else requestAnimationFrame(step);
+		};
+		requestAnimationFrame(step);
+	});
 }
 start();
 

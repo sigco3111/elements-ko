@@ -285,27 +285,23 @@
 			{
 				"id": "sky",
 				"label": "Sky",
-				"hint": "The time of day over the training ground.",
+				"hint": "The time of day over the training ground. People always see dusk.",
 				"type": "choice",
 				"options": [
 					{
 						"value": "dusk",
-						"label": "Dusk",
-						"image": "thumbs/sky/dusk.webp"
+						"label": "Dusk"
 					},
 					{
 						"value": "noon",
-						"label": "Noon",
-						"image": "thumbs/sky/noon.webp"
+						"label": "Noon"
 					},
 					{
 						"value": "night",
-						"label": "Night",
-						"image": "thumbs/sky/night.webp"
+						"label": "Night"
 					}
 				],
-				"default": "dusk",
-				"essential": true
+				"default": "dusk"
 			},
 			{
 				"id": "look",

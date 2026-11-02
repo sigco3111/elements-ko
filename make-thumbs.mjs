@@ -1,4 +1,4 @@
-// Captures the pictures of the Spell and Sky choices (thumbs/spells and thumbs/sky, <id>.webp, 112 x 112) and the cover
+// Captures the pictures of the Spell choice (thumbs/spells, <id>.webp, 112 x 112) and the cover
 // (cover.jpg, 1280 x 720) from the built demo in muted headless Chromium: `npm run build`, then `node make-thumbs.mjs`,
 // then `npm run build` again to copy them into dist/. `node make-thumbs.mjs fireball meteor` retakes only those.
 // Needs playwright-core and a Chromium: PLAYWRIGHT_CORE (default patch-lab's) and CHROME.
@@ -15,47 +15,47 @@ const { chromium } = await import(pathToFileURL(pw).href);
 
 // Close on the near target, wide for what fills the ground, low for what rises.
 const C = [-4.5, 1.9, 7.5, 0, 1.35, 2], W = [-1.6, 2.6, 10.8, 0.3, 1.3, -0.5], H = [-5.5, 1.0, 9.5, 0.2, 3.0, 1.2], S = [4.2, 1.7, 6.2, -0.2, 1.4, 2];
-// id: [camera, seconds after the cast, sky]: the moment that says what the spell is, on the sky it reads best against.
+// id: [camera, seconds after the cast, sky]: the moment that says what the spell is, at dusk as the demo always is.
 const SPELLS = {
-	thunderstrike: [C, 1.05, 'night'],
-	'chain-arc': [C, 0.7, 'night'],
-	'ball-lightning': [C, 3.0, 'night'],
+	thunderstrike: [C, 1.05, 'dusk'],
+	'chain-arc': [C, 0.7, 'dusk'],
+	'ball-lightning': [C, 3.0, 'dusk'],
 	thunderstorm: [W, 3.9, 'dusk'],
 	fireball: [C, 1.35, 'dusk'],
-	inferno: [C, 1.5, 'night'],
-	phoenix: [C, 2.35, 'night'],
-	'ember-swarm': [C, 4.2, 'night'],
+	inferno: [C, 1.5, 'dusk'],
+	phoenix: [C, 2.35, 'dusk'],
+	'ember-swarm': [C, 4.2, 'dusk'],
 	'tidal-lance': [S, 1.5, 'dusk'],
 	geyser: [C, 1.8, 'dusk'],
 	tsunami: [W, 2.6, 'dusk'],
-	'glacial-spike': [C, 1.35, 'night'],
-	'ice-wall': [W, 1.4, 'night'],
-	'absolute-zero': [C, 2.8, 'night'],
+	'glacial-spike': [C, 1.35, 'dusk'],
+	'ice-wall': [W, 1.4, 'dusk'],
+	'absolute-zero': [C, 2.8, 'dusk'],
 	blizzard: [C, 3.0, 'dusk'],
 	upheaval: [C, 2.0, 'dusk'],
 	meteor: [C, 2.4, 'dusk'],
-	fissure: [C, 1.2, 'night'],
-	'lava-geyser': [H, 3.0, 'night'],
+	fissure: [C, 1.2, 'dusk'],
+	'lava-geyser': [H, 3.0, 'dusk'],
 	cyclone: [W, 2.2, 'dusk'],
 	'wind-slash': [C, 1.25, 'dusk'],
 	'dust-devils': [W, 2.8, 'dusk'],
 	singularity: [W, 2.2, 'dusk'],
-	rift: [C, 2.0, 'night'],
-	portal: [W, 1.2, 'night'],
+	rift: [C, 2.0, 'dusk'],
+	portal: [W, 1.2, 'dusk'],
 	judgment: [H, 2.0, 'dusk'],
-	'radiant-lance': [C, 2.0, 'night'],
-	'solar-flare': [C, 2.8, 'night'],
-	'aurora-veil': [H, 3.2, 'night'],
-	supernova: [C, 2.6, 'night'],
-	'toxic-bloom': [C, 2.4, 'night'],
+	'radiant-lance': [C, 2.0, 'dusk'],
+	'solar-flare': [C, 2.8, 'dusk'],
+	'aurora-veil': [H, 3.2, 'dusk'],
+	supernova: [C, 2.6, 'dusk'],
+	'toxic-bloom': [C, 2.4, 'dusk'],
 	'corrosion-cloud': [C, 3.4, 'dusk'],
-	'plague-swarm': [W, 4.2, 'night'],
-	'arcane-barrage': [C, 1.3, 'night'],
-	aegis: [C, 2.0, 'night'],
-	starfall: [W, 2.2, 'night'],
-	'frozen-lightning': [C, 1.2, 'night'],
-	'fire-tornado': [H, 3.0, 'night'],
-	'black-flame': [C, 2.6, 'night'],
+	'plague-swarm': [W, 4.2, 'dusk'],
+	'arcane-barrage': [C, 1.3, 'dusk'],
+	aegis: [C, 2.0, 'dusk'],
+	starfall: [W, 2.2, 'dusk'],
+	'frozen-lightning': [C, 1.2, 'dusk'],
+	'fire-tornado': [H, 3.0, 'dusk'],
+	'black-flame': [C, 2.6, 'dusk'],
 };
 const only = process.argv.slice(2);
 
@@ -69,13 +69,12 @@ await new Promise((r) => server.once('listening', r));
 
 const browser = await chromium.launch({ executablePath: chrome, headless: true, args: ['--mute-audio', '--ignore-gpu-blocklist', '--use-angle=d3d11'] });
 const page = await browser.newPage({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 });
-await page.goto(`http://127.0.0.1:${server.address().port}/index.html?nowarm`);
+await page.goto(`http://127.0.0.1:${server.address().port}/index.html`);
 await page.waitForFunction(() => window.__block?.times?.ready, null, { timeout: 120000 });
 await page.evaluate(async () => {
 	const B = window.__block, E = B.elements;
 	B.hooks.onVisible(false);
 	B.stop();
-	for (const sp of E.SPELLS) await E.warmSpell(sp);
 	const gl = E.renderer.getContext();
 	// frames with a wait for the GPU now and then: hundreds in one go can take the tab down
 	const fence = async () => { const q = gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0); gl.flush(); while (gl.clientWaitSync(q, 0, 0) === gl.TIMEOUT_EXPIRED) await new Promise((r) => setTimeout(r, 1)); gl.deleteSync(q); };
@@ -137,18 +136,6 @@ for (const [id, [view, t, sky]] of Object.entries(SPELLS)) {
 		window.__block.elements.render(1 / 60);
 		return window.__t.grab('image/webp', q, 112, 112, true);
 	});
-}
-if (!only.length || only.includes('sky')) {
-	for (const sky of ['dusk', 'noon', 'night']) {
-		await page.evaluate(async ([sky, v]) => {
-			await window.__t.scene(sky, v);
-			await window.__t.steps(30);
-		}, [sky, [-1.6, 2.6, 10.8, 0.3, 1.3, -0.5]]);
-		await thumb(path.join(here, 'thumbs/sky', `${sky}.webp`), 0.85, async (q) => {
-			window.__block.elements.render(1 / 60);
-			return window.__t.grab('image/webp', q, 112, 112, true);
-		});
-	}
 }
 if (!only.length || only.includes('cover')) {
 	// the cover: three elements at once on the training ground at dusk, each caught at its height

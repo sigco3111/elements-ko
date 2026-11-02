@@ -57,8 +57,8 @@ async function linkAll(renderer, target, meshes, camera = passCam) {
 }
 
 // The world's parts are built one at a time so a loading page can say how far along it is: await
-// createElements(...) takes about as long as the start of a cold load. `spells` adds your own spell
-// modules to the 39 (see README.md, Make a new spell). `onProgress` gets 0 to 1 while it builds.
+// createElements(...) takes about a tenth of a cold load. `spells` adds your own spell modules to the 39
+// (see README.md, Make a new spell). `onProgress` gets 0 to 1 while it builds.
 export async function createElements({ renderer, camera, sky: skyPreset = 'dusk', spells: extra = [], onProgress } = {}) {
   renderer.autoClear = false;
   renderer.shadowMap.enabled = true;
@@ -87,7 +87,7 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
   scenes.refract.environment = sky.cube;
   scenes.refract.add(arena.refractGroup);
   U.uSkyCube.value = sky.cube;
-  onProgress?.(0.1);
+  onProgress?.(0.2);
   await breathe();
 
   const reflection = new PlanarReflection(REFLECT_LAYER);
@@ -175,7 +175,7 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
     s.objects = [...sceneObjects()].filter((o) => !before.has(o));
     s.roots = s.objects.filter((o) => before.has(o.parent));
     s.warm = false;
-    onProgress?.(0.1 + 0.3 * (++built / SPELLS.length));
+    onProgress?.(0.2 + 0.8 * (++built / SPELLS.length));
     if (built % 6 === 0) await breathe();
   }
   particles.build();
@@ -380,37 +380,25 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
       s.warm = true;
     })());
   }
-  // The first draw of a program that writes several targets (everything in the half-res FX pass) waits
-  // on a second compile on the GPU's main thread, however it was linked. These spells' take over 80 ms
-  // each (an RTX 4090's PC, D3D11), so they go before ready, slowest first, for as long as there's time.
-  const SLOW_FIRST_DRAW = ['water', 'thunderstorm', 'wind', 'supernova', 'light', 'dust-devils', 'acid', 'solar-flare', 'black-flame', 'starfall', 'arcane', 'blizzard', 'aurora-veil', 'tsunami', 'fire', 'ember-swarm'];
-  async function warmSlow(until) {
-    await Promise.all(SLOW_FIRST_DRAW.map(async (id) => {
-      const s = fx.spells[id];
-      if (!s) return;
+  // Everything warm, for a loading screen: every link started at once, then each spell's first draws one after
+  // another, the GPU allowed to finish each. The first draw of a program that writes several targets (everything in
+  // the half-res FX pass) waits on a second compile on the GPU's main thread, however it was linked: 100 ms to 500 ms
+  // each on a fast PC. So nothing here is left for later: after this no draw can stall a frame. `until` is a time
+  // (performance.now) to give up by; what's left then warms when it's first cast.
+  async function warmAll({ until = Infinity, onProgress } = {}) {
+    for (const s of SPELLS) linkSpell(s);
+    let done = 0;
+    const step = () => onProgress?.(++done / (SPELLS.length + 1));
+    const core = warmCore().then(step);
+    for (const s of SPELLS) {
       await linkSpell(s);
-      if (performance.now() < until) await warmSpell(s);
-    }));
-  }
-  function linkEverySpell() { for (const s of SPELLS) linkSpell(s); }
-  const warmQueue = [];
-  let warmRunning = false;
-  // Everything that isn't warm yet, one spell at a time, with frames between. Selecting a spell
-  // moves it to the front (warmFirst).
-  async function warmRest({ gap = 40 } = {}) {
-    if (warmRunning) return;
-    warmRunning = true;
-    warmQueue.push(...SPELLS.filter((s) => !s.warm && !warmQueue.includes(s)));
-    while (warmQueue.length) {
-      const s = warmQueue.shift();
-      if (!s.warm) await warmSpell(s);
-      await new Promise((r) => setTimeout(r, gap));
+      if (performance.now() > until) break;
+      await warmSpell(s);
+      await gpuFence();
+      step();
     }
-    warmRunning = false;
-  }
-  function warmFirst(s) {
-    const i = warmQueue.indexOf(s);
-    if (i > 0) { warmQueue.splice(i, 1); warmQueue.unshift(s); }
+    await core;
+    await gpuFence();
   }
 
   // --- what a game calls ------------------------------------------------------------------
@@ -429,7 +417,7 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
   }
   const api = {
     fx, scenes, sky, arena, rig, post, casts, ground, particles, lights, forces, impacts, env, view, renderer, camera, makeTargets,
-    SPELLS, ENTRIES, ELEMENTS, ARENA, Q, entryOf, warmSpell, warmRest, warmFirst, warmCore, warmSlow, linkEverySpell, renderFrame,
+    SPELLS, ENTRIES, ELEMENTS, ARENA, Q, entryOf, warmSpell, warmAll, gpuFence, renderFrame,
     get elapsed() { return elapsed; },
     get warmLeft() { return SPELLS.filter((s) => !s.warm).length; },
     /** The render size in CSS pixels, and how many drawn pixels a CSS pixel gets. */
@@ -453,7 +441,6 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
       if (e.spell.warm) return casts.cast(e.spell, point, opts);
       // not compiled yet: cast the moment it is, rather than stall a frame compiling
       const p = point.clone();
-      warmFirst(e.spell);
       warmSpell(e.spell).then(() => casts.cast(e.spell, p, opts));
       return null;
     },
@@ -527,7 +514,6 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
       rig.restore(camera);
     },
   };
-  onProgress?.(0.45);
   return api;
 }
 
