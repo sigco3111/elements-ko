@@ -215,7 +215,7 @@ function loop(now) {
 
 // --- start ----------------------------------------------------------------------------------------
 async function start() {
-	elements = await createElements({ renderer, camera, sky: v.sky, onProgress: (p) => block.progress(p * 0.6) });
+	elements = await createElements({ renderer, camera, sky: v.sky, onProgress: (p) => block.progress(p * 0.6, 'Building the spells') });
 	mark('built');
 	resize();
 	elements.rig.amount = v.shake;
@@ -227,7 +227,7 @@ async function start() {
 	const slow = elements.warmSlow(times.start + READY_BY);
 	await elements.warmCore();
 	mark('core');
-	block.progress(0.9);
+	block.progress(0.9, 'Warming the spells');
 	await elements.warmSpell(spellEntry.spell);
 	mark('spell');
 	await slow;
@@ -237,10 +237,11 @@ async function start() {
 	elements.post._snap = true;
 	for (let i = 0; i < 4; i++) elements.render(1 / 60);
 	mark('settled');
-	block.progress(1);
+	block.progress(1, 'Warming the spells');
 	canvas.style.visibility = '';
 	hud.hidden = false;
 	tip.hidden = false;
+	document.getElementById('credit').hidden = false;
 	last = performance.now();
 	requestAnimationFrame(loop);
 	block.ready();
