@@ -11,8 +11,9 @@ import { block as recipeBlock } from './recipe.json';
 import { createElements } from './elements.js';
 import { settingsFor, slug } from './tuning.js';
 
-// Ready within this long of starting, however much of the warm-up is done by then (ms).
-const READY_BY = 7000;
+// Ready within this long of starting, however much of the warm-up is done by then (ms). Usually it's done by 7 s; a
+// slower PC waits a little longer here, not freezing once a person is looking at it.
+const READY_BY = 11000;
 const times = { start: performance.now() };
 const mark = (name) => (times[name] = Math.round(performance.now() - times.start));
 
