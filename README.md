@@ -95,7 +95,7 @@ const elements = await createElements({ renderer, camera, spells: [frostNova] })
 
 ## Warm it up
 
-A cold load (a new browser, nothing cached) took 24 s in upstream's own page and 7.9 s at worst here, with no frame over 100 ms afterwards, on Windows with an RTX 4090. If you're writing your own start-up, these are what made the difference:
+A cold load (a new browser profile, nothing cached, loaded from Patch's game host) took 18 to 24 s before these changes and takes 6 to 8 s now, with every spell's first cast at 18 ms or less afterwards, on Windows with an RTX 4090. If you're writing your own start-up, these are what made the difference:
 
 - **A program's first use blocks until it has linked,** and a simulation shader can take 4 s. So every program starts linking at once (`linkEverySpell`) and nothing is drawn until its link is done. The driver links side by side, and the page keeps going.
 - **On Windows, a shader that draws to several targets at once compiles a second time at its first draw,** on the graphics process's main thread, however it was linked. ANGLE links for one target. Nothing avoids this, so the slowest (`SLOW_FIRST_DRAW` in `elements.js`) go before `ready`, while the core links, and the rest in small slices after it. The particle and swarm simulations here are one output per program for this reason, and draw three and two times a step: a little GPU for a few seconds of loading.

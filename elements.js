@@ -382,7 +382,7 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
   // The first draw of a program that writes several targets (everything in the half-res FX pass) waits
   // on a second compile on the GPU's main thread, however it was linked. These spells' take over 80 ms
   // each (an RTX 4090's PC, D3D11), so they go before ready, slowest first, for as long as there's time.
-  const SLOW_FIRST_DRAW = ['water', 'thunderstorm', 'wind', 'supernova', 'light', 'dust-devils', 'acid', 'solar-flare', 'black-flame', 'starfall', 'arcane', 'blizzard', 'aurora-veil', 'tsunami'];
+  const SLOW_FIRST_DRAW = ['water', 'thunderstorm', 'wind', 'supernova', 'light', 'dust-devils', 'acid', 'solar-flare', 'black-flame', 'starfall', 'arcane', 'blizzard', 'aurora-veil', 'tsunami', 'phoenix', 'ember-swarm'];
   async function warmSlow(until) {
     await Promise.all(SLOW_FIRST_DRAW.map(async (id) => {
       const s = fx.spells[id];
