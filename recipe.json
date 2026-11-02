@@ -1,0 +1,676 @@
+{
+	"mode": "browser",
+	"block": {
+		"controls": [
+			{
+				"id": "spell",
+				"label": "Spell",
+				"hint": "Which spell a click casts: click anywhere on the ground or at a target.",
+				"type": "choice",
+				"options": [
+					{
+						"value": "thunderstrike",
+						"label": "Thunderstrike",
+						"group": "Lightning",
+						"image": "thumbs/spells/thunderstrike.webp"
+					},
+					{
+						"value": "chain-arc",
+						"label": "Chain Arc",
+						"group": "Lightning",
+						"image": "thumbs/spells/chain-arc.webp"
+					},
+					{
+						"value": "ball-lightning",
+						"label": "Ball Lightning",
+						"group": "Lightning",
+						"image": "thumbs/spells/ball-lightning.webp"
+					},
+					{
+						"value": "thunderstorm",
+						"label": "Thunderstorm",
+						"group": "Lightning",
+						"image": "thumbs/spells/thunderstorm.webp"
+					},
+					{
+						"value": "fireball",
+						"label": "Fireball",
+						"group": "Fire",
+						"image": "thumbs/spells/fireball.webp"
+					},
+					{
+						"value": "inferno",
+						"label": "Inferno",
+						"group": "Fire",
+						"image": "thumbs/spells/inferno.webp"
+					},
+					{
+						"value": "phoenix",
+						"label": "Phoenix",
+						"group": "Fire",
+						"image": "thumbs/spells/phoenix.webp"
+					},
+					{
+						"value": "ember-swarm",
+						"label": "Ember Swarm",
+						"group": "Fire",
+						"image": "thumbs/spells/ember-swarm.webp"
+					},
+					{
+						"value": "tidal-lance",
+						"label": "Tidal Lance",
+						"group": "Water",
+						"image": "thumbs/spells/tidal-lance.webp"
+					},
+					{
+						"value": "geyser",
+						"label": "Geyser",
+						"group": "Water",
+						"image": "thumbs/spells/geyser.webp"
+					},
+					{
+						"value": "tsunami",
+						"label": "Tsunami",
+						"group": "Water",
+						"image": "thumbs/spells/tsunami.webp"
+					},
+					{
+						"value": "glacial-spike",
+						"label": "Glacial Spike",
+						"group": "Ice",
+						"image": "thumbs/spells/glacial-spike.webp"
+					},
+					{
+						"value": "ice-wall",
+						"label": "Ice Wall",
+						"group": "Ice",
+						"image": "thumbs/spells/ice-wall.webp"
+					},
+					{
+						"value": "absolute-zero",
+						"label": "Absolute Zero",
+						"group": "Ice",
+						"image": "thumbs/spells/absolute-zero.webp"
+					},
+					{
+						"value": "blizzard",
+						"label": "Blizzard",
+						"group": "Ice",
+						"image": "thumbs/spells/blizzard.webp"
+					},
+					{
+						"value": "upheaval",
+						"label": "Upheaval",
+						"group": "Earth",
+						"image": "thumbs/spells/upheaval.webp"
+					},
+					{
+						"value": "meteor",
+						"label": "Meteor",
+						"group": "Earth",
+						"image": "thumbs/spells/meteor.webp"
+					},
+					{
+						"value": "fissure",
+						"label": "Fissure",
+						"group": "Earth",
+						"image": "thumbs/spells/fissure.webp"
+					},
+					{
+						"value": "lava-geyser",
+						"label": "Lava Geyser",
+						"group": "Earth",
+						"image": "thumbs/spells/lava-geyser.webp"
+					},
+					{
+						"value": "cyclone",
+						"label": "Cyclone",
+						"group": "Wind",
+						"image": "thumbs/spells/cyclone.webp"
+					},
+					{
+						"value": "wind-slash",
+						"label": "Wind Slash",
+						"group": "Wind",
+						"image": "thumbs/spells/wind-slash.webp"
+					},
+					{
+						"value": "dust-devils",
+						"label": "Dust Devils",
+						"group": "Wind",
+						"image": "thumbs/spells/dust-devils.webp"
+					},
+					{
+						"value": "singularity",
+						"label": "Singularity",
+						"group": "Void",
+						"image": "thumbs/spells/singularity.webp"
+					},
+					{
+						"value": "rift",
+						"label": "Rift",
+						"group": "Void",
+						"image": "thumbs/spells/rift.webp"
+					},
+					{
+						"value": "portal",
+						"label": "Portal",
+						"group": "Void",
+						"image": "thumbs/spells/portal.webp"
+					},
+					{
+						"value": "judgment",
+						"label": "Judgment",
+						"group": "Light",
+						"image": "thumbs/spells/judgment.webp"
+					},
+					{
+						"value": "radiant-lance",
+						"label": "Radiant Lance",
+						"group": "Light",
+						"image": "thumbs/spells/radiant-lance.webp"
+					},
+					{
+						"value": "solar-flare",
+						"label": "Solar Flare",
+						"group": "Light",
+						"image": "thumbs/spells/solar-flare.webp"
+					},
+					{
+						"value": "aurora-veil",
+						"label": "Aurora Veil",
+						"group": "Light",
+						"image": "thumbs/spells/aurora-veil.webp"
+					},
+					{
+						"value": "supernova",
+						"label": "Supernova",
+						"group": "Light",
+						"image": "thumbs/spells/supernova.webp"
+					},
+					{
+						"value": "toxic-bloom",
+						"label": "Toxic Bloom",
+						"group": "Acid",
+						"image": "thumbs/spells/toxic-bloom.webp"
+					},
+					{
+						"value": "corrosion-cloud",
+						"label": "Corrosion Cloud",
+						"group": "Acid",
+						"image": "thumbs/spells/corrosion-cloud.webp"
+					},
+					{
+						"value": "plague-swarm",
+						"label": "Plague Swarm",
+						"group": "Acid",
+						"image": "thumbs/spells/plague-swarm.webp"
+					},
+					{
+						"value": "arcane-barrage",
+						"label": "Arcane Barrage",
+						"group": "Arcane",
+						"image": "thumbs/spells/arcane-barrage.webp"
+					},
+					{
+						"value": "aegis",
+						"label": "Aegis",
+						"group": "Arcane",
+						"image": "thumbs/spells/aegis.webp"
+					},
+					{
+						"value": "starfall",
+						"label": "Starfall",
+						"group": "Arcane",
+						"image": "thumbs/spells/starfall.webp"
+					},
+					{
+						"value": "frozen-lightning",
+						"label": "Frozen Lightning",
+						"group": "Two at once",
+						"image": "thumbs/spells/frozen-lightning.webp"
+					},
+					{
+						"value": "fire-tornado",
+						"label": "Fire Tornado",
+						"group": "Two at once",
+						"image": "thumbs/spells/fire-tornado.webp"
+					},
+					{
+						"value": "black-flame",
+						"label": "Black Flame",
+						"group": "Two at once",
+						"image": "thumbs/spells/black-flame.webp"
+					}
+				],
+				"default": "starfall",
+				"essential": true
+			},
+			{
+				"id": "size",
+				"label": "Size",
+				"hint": "How big each cast is.",
+				"type": "number",
+				"min": 0.4,
+				"max": 2,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×",
+				"essential": true
+			},
+			{
+				"id": "intensity",
+				"label": "Intensity",
+				"hint": "How strong and bright each cast is.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×",
+				"essential": true
+			},
+			{
+				"id": "speed",
+				"label": "Speed",
+				"hint": "How fast everything plays: below 1 is slow motion.",
+				"type": "number",
+				"min": 0.1,
+				"max": 2,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×",
+				"essential": true
+			},
+			{
+				"id": "sky",
+				"label": "Sky",
+				"hint": "The time of day over the training ground.",
+				"type": "choice",
+				"options": [
+					{
+						"value": "dusk",
+						"label": "Dusk",
+						"image": "thumbs/sky/dusk.webp"
+					},
+					{
+						"value": "noon",
+						"label": "Noon",
+						"image": "thumbs/sky/noon.webp"
+					},
+					{
+						"value": "night",
+						"label": "Night",
+						"image": "thumbs/sky/night.webp"
+					}
+				],
+				"default": "dusk",
+				"essential": true
+			},
+			{
+				"id": "look",
+				"label": "Look",
+				"hint": "One of the spell's three named looks (presets in spells.json), or its own.",
+				"type": "choice",
+				"options": [
+					{
+						"value": "own",
+						"label": "Its own"
+					},
+					{
+						"value": "first",
+						"label": "First look"
+					},
+					{
+						"value": "second",
+						"label": "Second look"
+					},
+					{
+						"value": "third",
+						"label": "Third look"
+					}
+				],
+				"default": "own"
+			},
+			{
+				"id": "auto",
+				"label": "Keep casting",
+				"hint": "Keeps casting the chosen spell at the targets.",
+				"type": "toggle",
+				"default": false
+			},
+			{
+				"id": "auto.all",
+				"label": "Cast them all",
+				"hint": "While keep casting is on, goes through every spell in turn.",
+				"type": "toggle",
+				"default": false
+			},
+			{
+				"id": "shake",
+				"label": "Camera shake",
+				"hint": "How much big impacts shake the camera.",
+				"type": "number",
+				"min": 0,
+				"max": 2,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "reduced",
+				"label": "Reduce flashes",
+				"hint": "Dims flashes to at most three a second, and cuts shake, hitstop and FOV punch.",
+				"type": "toggle",
+				"default": false
+			},
+			{
+				"id": "exposure",
+				"label": "Exposure",
+				"hint": "Brightens or darkens the whole picture.",
+				"type": "number",
+				"min": 0.25,
+				"max": 4,
+				"step": 0.01,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "bloom",
+				"label": "Bloom",
+				"hint": "How much bright things glow out into the picture.",
+				"type": "number",
+				"min": 0,
+				"max": 0.6,
+				"step": 0.005,
+				"default": 0.12
+			},
+			{
+				"id": "contrast",
+				"label": "Contrast",
+				"hint": "The final picture's contrast.",
+				"type": "number",
+				"min": 0.7,
+				"max": 1.6,
+				"step": 0.01,
+				"default": 1.12
+			},
+			{
+				"id": "saturation",
+				"label": "Saturation",
+				"hint": "The final picture's colour strength.",
+				"type": "number",
+				"min": 0,
+				"max": 2,
+				"step": 0.01,
+				"default": 1.3
+			},
+			{
+				"id": "vignette",
+				"label": "Vignette",
+				"hint": "How much the corners of the picture darken.",
+				"type": "number",
+				"min": 0,
+				"max": 1,
+				"step": 0.01,
+				"default": 0.12
+			},
+			{
+				"id": "motion-blur",
+				"label": "Motion blur",
+				"hint": "How much the picture blurs with fast camera moves.",
+				"type": "number",
+				"min": 0,
+				"max": 1,
+				"step": 0.01,
+				"default": 0.5
+			},
+			{
+				"id": "wind",
+				"label": "Wind",
+				"hint": "A steady wind that pushes smoke, dust and sparks.",
+				"type": "number",
+				"min": 0,
+				"max": 12,
+				"step": 0.1,
+				"default": 0,
+				"unit": "m/s"
+			},
+			{
+				"id": "wind.direction",
+				"label": "Wind direction",
+				"hint": "Where the wind blows towards.",
+				"type": "number",
+				"min": -180,
+				"max": 180,
+				"step": 1,
+				"default": 20,
+				"unit": "°"
+			},
+			{
+				"id": "fov",
+				"label": "Field of view",
+				"hint": "The camera's vertical field of view.",
+				"type": "number",
+				"min": 25,
+				"max": 90,
+				"step": 1,
+				"default": 50,
+				"unit": "°"
+			},
+			{
+				"id": "particles",
+				"label": "Particle budget",
+				"hint": "How many particles every spell emits: lower is cheaper.",
+				"type": "number",
+				"min": 0.1,
+				"max": 2,
+				"step": 0.01,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "color.on",
+				"label": "Own colours",
+				"hint": "Replaces the spell's main colours with the two below.",
+				"type": "toggle",
+				"default": false
+			},
+			{
+				"id": "color.main",
+				"label": "Main colour",
+				"hint": "The spell's main colour, while own colours is on.",
+				"type": "color",
+				"default": "#33d6ff"
+			},
+			{
+				"id": "color.second",
+				"label": "Second colour",
+				"hint": "The spell's second colour, while own colours is on.",
+				"type": "color",
+				"default": "#ff4fd8"
+			},
+			{
+				"id": "tune.height",
+				"label": "Height",
+				"hint": "How tall, for spells that rise. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.duration",
+				"label": "Duration",
+				"hint": "How long it lasts, for spells that last. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.hold",
+				"label": "Hold",
+				"hint": "How long it stays before it ends, for spells that hold. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.flight",
+				"label": "Flight speed",
+				"hint": "How fast it travels, for spells that fly. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.haze",
+				"label": "Heat haze",
+				"hint": "How much it bends the air behind it. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.smoke",
+				"label": "Smoke",
+				"hint": "How much smoke it gives off. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.dust",
+				"label": "Dust",
+				"hint": "How much dust it raises. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.mist",
+				"label": "Mist",
+				"hint": "How much mist it gives off. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.sparks",
+				"label": "Sparks",
+				"hint": "How many sparks it throws. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.embers",
+				"label": "Embers",
+				"hint": "How many embers it throws. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.debris",
+				"label": "Debris",
+				"hint": "How much rock and rubble it throws. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.scorch",
+				"label": "Scorch",
+				"hint": "How much it burns the floor. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.frost",
+				"label": "Frost",
+				"hint": "How far frost spreads on the floor. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			},
+			{
+				"id": "tune.glints",
+				"label": "Glints",
+				"hint": "How many ice glints catch the light. Multiplies the spell's own value.",
+				"type": "number",
+				"min": 0.25,
+				"max": 2.5,
+				"step": 0.05,
+				"default": 1,
+				"unit": "×"
+			}
+		],
+		"presets": [],
+		"triggers": [
+			{
+				"id": "clear",
+				"label": "Clear",
+				"hint": "Takes away every cast, the scorch and frost on the floor and what the targets took."
+			}
+		]
+	},
+	"credits": [
+		{
+			"files": "assets/",
+			"license": "MIT",
+			"source": "https://github.com/Humpalumps/ultra-elements",
+			"author": "Humpalumps, Ultra Elements (and Ultra-Water, which it adapts)"
+		},
+		{
+			"files": "assets/",
+			"license": "MIT",
+			"source": "https://github.com/mrdoob/three.js",
+			"author": "three.js authors"
+		},
+		{
+			"files": "thumbs/",
+			"license": "MIT",
+			"author": "Patch (stills of this demo)"
+		}
+	]
+}

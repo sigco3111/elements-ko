@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elements</title>
+<link rel="icon" href="data:," />
+<style>
+  @font-face { font-family: 'Red Hat Mono'; font-weight: 500; font-display: swap; src: url('./fonts/red-hat-mono-latin-500-normal.woff2') format('woff2'); }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
+  #viewport { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; outline: none; cursor: crosshair; }
+  .hud { position: fixed; pointer-events: none; font: 500 11px/1 'Red Hat Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #fafafa; }
+  .hud[hidden] { display: none; }
+  #armed { top: 12px; left: 12px; display: flex; align-items: center; gap: 8px; padding: 8px 11px; border-radius: 7px;
+    background: rgba(9, 9, 11, 0.62); border: 1px solid rgba(255, 255, 255, 0.08); transition: border-color 0.5s; }
+  #armed .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent, #fafafa); box-shadow: 0 0 8px var(--accent, #fafafa); }
+  #armed .k { color: #a1a1aa; }
+  #armed.cast { border-color: var(--accent, #fafafa); }
+  #tip { right: 12px; bottom: 10px; font-size: 10px; color: rgba(250, 250, 250, 0.6); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
+  @media (max-width: 520px) { #tip { display: none; } }
+</style>
+</head>
+<body>
+<canvas id="viewport" tabindex="0"></canvas>
+<div id="armed" class="hud" hidden><span class="dot"></span><span class="k">Spell</span><span class="name"></span></div>
+<div id="tip" class="hud" hidden>Click to cast · drag to look · scroll to zoom</div>
+<script type="module" src="./demo.js"></script>
+</body>
+</html>
