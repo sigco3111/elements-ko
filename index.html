@@ -14,6 +14,7 @@
   .hud[hidden] { display: none; }
   #armed { top: 12px; left: 12px; display: flex; align-items: center; gap: 8px; padding: 8px 11px; border-radius: 7px;
     background: rgba(9, 9, 11, 0.62); border: 1px solid rgba(255, 255, 255, 0.08); transition: border-color 0.5s; }
+  #armed[hidden] { display: none; }
   #armed .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent, #fafafa); box-shadow: 0 0 8px var(--accent, #fafafa); }
   #armed .k { color: #a1a1aa; }
   #armed.cast { border-color: var(--accent, #fafafa); }
