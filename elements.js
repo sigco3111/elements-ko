@@ -334,6 +334,7 @@ export async function createElements({ renderer, camera, sky: skyPreset = 'dusk'
     particles.warm(false);
     lens.active = lens.warming = false;
     unpark();
+    if (targetsHidden) sunDirty = true;   // that frame's shadow map had the hidden training ground in it
     await gpuFence();
   }
 
