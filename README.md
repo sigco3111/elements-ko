@@ -91,11 +91,11 @@ export default {
 const elements = await createElements({ renderer, camera, spells: [frostNova] });
 ```
 
-**The rules that keep it fast** (`lib/ultra-elements/CONTRIBUTING.md`, with the whole `fx` object): no allocation after `create()`, one of each thing from a pool and released in the `done` phase; no new shader programs or defines after load, uniforms only; `fx.rand()`, never `Math.random()`; flashes through `fx.flash()` and shake through `fx.rig`. Keep a spell under 3 ms for the whole frame on a mid-range GPU at its worst moment. `lib/ultra-elements/SPELLBOOK.md` has about a hundred more spell ideas with the systems each would use.
+**The rules that keep it fast** (`lib/ultra-elements/CONTRIBUTING.md`, with the whole `fx` object): no allocation after `create()`, one of each thing from a pool and released in the `done` phase; no new shader programs or defines after load, uniforms only; `fx.rand()`, never `Math.random()`; flashes through `fx.flash()` and shake through `fx.rig`. Keep a spell under 3 ms for the whole frame on a mid-range GPU at its worst moment. `lib/ultra-elements/SPELLBOOK.md` has about eighty more spell ideas with the systems each would use.
 
 ## Warm it up
 
-A cold load (a new browser profile, nothing cached, loaded from Patch's game host) took 18 to 24 s before these changes and takes 6 to 8 s now, with every spell's first cast at 18 ms or less afterwards, on Windows with an RTX 4090. If you're writing your own start-up, these are what made the difference:
+A cold load (a new browser profile, nothing cached, loaded from Patch's game host) took 18 to 24 s before these changes and takes 6 to 9 s now, with every spell's first cast at 18 ms or less afterwards, on Windows with an RTX 4090. If you're writing your own start-up, these are what made the difference:
 
 - **A program's first use blocks until it has linked,** and a simulation shader can take 4 s. So every program starts linking at once (`linkEverySpell`) and nothing is drawn until its link is done. The driver links side by side, and the page keeps going.
 - **On Windows, a shader that draws to several targets at once compiles a second time at its first draw,** on the graphics process's main thread, however it was linked. ANGLE links for one target. Nothing avoids this, so the slowest (`SLOW_FIRST_DRAW` in `elements.js`) go before `ready`, while the core links, and the rest in small slices after it. The particle and swarm simulations here are one output per program for this reason, and draw three and two times a step: a little GPU for a few seconds of loading.
@@ -118,7 +118,7 @@ Size and Intensity mean different settings in each spell (`tuning.js` says which
 
 **Trigger:** Clear (`clear`) takes away every cast, the scorch and frost on the floor and what the targets took.
 
-**For agents** (31 more, in `recipe.json` with every range and default):
+**For agents** (32 more, in `recipe.json` with every range and default):
 
 | id | What it does |
 |---|---|
