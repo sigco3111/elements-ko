@@ -21,8 +21,8 @@ canvas.style.visibility = 'hidden';
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, depth: false, stencil: false, alpha: false, powerPreference: 'high-performance' });
 const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 400);
 
-// In front of the caster's orb, the targets ahead and the columns and the sunset behind them.
-const VIEW = { position: [-1.6, 2.6, 10.8], target: [0.3, 1.3, -0.5] };
+// Behind the caster's orb, so what it casts flies out across the frame, with the targets, the columns and the sunset beyond.
+const VIEW = { position: [-2.6, 3.0, 14.2], target: [0.3, 1.2, -0.5] };
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 controls.dampingFactor = 0.08;
