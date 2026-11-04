@@ -27,6 +27,14 @@ It's [Ultra Elements](https://github.com/Humpalumps/ultra-elements) by Humpalump
 
 Everything is drawn from code: GPU particles, a FLIP fluid for water and acid, a combustion solver for fire and smoke, raymarched volumes, lightning, gravitational lensing, a reaction field on the floor that takes scorch, frost, cracks and acid. There isn't a texture, model or sound in it. `lib/ultra-elements/README.md` is the author's own account of how each part works.
 
+## What this owns
+
+- **Renderer:** WebGL, and it takes yours: `createElements({ renderer, camera, sky })` in `elements.js`, with a `WebGLRenderer`.
+- **Frame loop:** It draws the whole frame. Call `elements.render(dt)` from `renderer.setAnimationLoop`, in place of `renderer.render`. It goes through its own HDR target, effect passes and `PostFX`. Other things go in `elements.arena.group`, followed by `elements.updateShadow()`; `elements.hideArena()` takes the training ground away.
+- **three:** `package.json` pins 0.186.1. No other library has to match.
+- **Copy:** `elements.js` and `lib/ultra-elements/`. `tuning.js` and `spells.json` are read by `demo.js` and `make-recipe.mjs`, not by `elements.js`.
+- **Elsewhere:** The spells load through `import.meta.glob` in `lib/ultra-elements/src/spells/index.js`, which is Vite's. `createElements` sets `renderer.autoClear = false` and the renderer's shadow map settings. Spells land on flat ground at y = 0 and stop at a low wall 18 m from the middle.
+
 ## Use a spell in a game
 
 `elements.js` draws the whole frame with three's `WebGLRenderer` and casts at a world point:
