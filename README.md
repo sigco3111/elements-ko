@@ -4,6 +4,8 @@ Patch의 [Elements](https://patch.gg/patch/elements)를 한국어로 옮긴 비�
 
 **플레이:** https://sigco3111.github.io/elements-ko/
 
+![훈련장에서 주문을 시전하는 장면](cover.jpg)
+
 ## 소개
 
 황혼의 훈련장에서 클릭 한 번으로 39종의 원소 주문을 시전해 보는 three.js(WebGL2) 데모입니다. 텍스처·모델·사운드 없이 모든 것을 코드로 그립니다. GPU 입자, 물·산성의 FLIP 유체, 불·연기의 연소 시뮬레이션, 레이마칭 볼륨, 번개, 중력 렌즈, 바닥에 남는 그을음·서리·균열까지 실시간으로 계산됩니다.
@@ -27,7 +29,15 @@ Patch의 [Elements](https://patch.gg/patch/elements)를 한국어로 옮긴 비�
 
 ## 스크린샷
 
-배포본 화면은 [docs/screenshots/](docs/screenshots/)에 있습니다.
+배포본 화면입니다. 자동 캡처 환경의 그래픽 한계로 보라·검정 얼룩이 보이며, 실제 GPU 환경의 색감은 아래 검증 상태를 참고해 주세요. 원본 파일은 [docs/screenshots/](docs/screenshots/)에 있습니다.
+
+![배포본 로딩 완료 화면](docs/screenshots/01-%EB%A1%9C%EB%94%A9-%EC%99%84%EB%A3%8C.png)
+
+![설정 패널을 연 화면](docs/screenshots/02-%EC%84%A4%EC%A0%95-%ED%8C%A8%EB%84%90.png)
+
+![주문 '불사조'를 선택한 화면](docs/screenshots/03-%EC%A3%BC%EB%AC%B8-%EB%B6%88%EC%82%AC%EC%A1%B0.png)
+
+![불사조 실제 시전 장면](docs/screenshots/04-%EC%A3%BC%EB%AC%B8-%EB%B6%88%EC%82%AC%EC%A1%B0-%EC%8B%9C%EC%A0%84.png)
 
 ## 검증 상태
 
