@@ -9,3 +9,4 @@ three.js: MIT, the three.js authors. https://github.com/mrdoob/three.js
 Red Hat Mono (assets/red-hat-mono-*.woff2): The Red Hat Project Authors, SIL Open Font License 1.1: OFL-red-hat-mono.txt.
 Patch: elements.js (adapted from Ultra Elements' main.js), the demo page, the plain controls and the choices'
   pictures (thumbs/, stills of this demo), MIT: LICENSE.txt.
+Noto Sans KR (fonts/noto-sans-kr-ui.woff2): subset for the Korean UI, Adobe and Google, SIL Open Font License 1.1: OFL-noto-sans-kr.txt.

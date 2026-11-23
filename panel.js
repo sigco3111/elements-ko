@@ -102,8 +102,13 @@ export function mountPanel(recipeBlock) {
 				buttons.set(option.value, btn);
 				grid.appendChild(btn);
 			}
+			let applied;
 			const apply = (value) => {
 				for (const [v, b] of buttons) b.classList.toggle('on', v === value);
+				// 선택이 실제로 바뀔 때만 스크롤: 0.5초 동기화마다 scrollIntoView를 부르면
+				// 사용자가 패널을 위로 올려도 계속 선택 주문으로 되돌아가 버린다.
+				if (value === applied) return;
+				applied = value;
 				const on = buttons.get(value);
 				if (on) on.scrollIntoView({ block: 'nearest' });
 			};
