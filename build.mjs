@@ -19,6 +19,7 @@ put(path.join(here, 'LICENSE'), 'LICENSE.txt');
 put(path.join(here, 'lib/ultra-elements/LICENSE'), 'LICENSE-ultra-elements.txt');
 put(path.join(here, 'lib/ultra-elements/THIRD_PARTY_NOTICES.md'), 'THIRD_PARTY_NOTICES-ultra-elements.md');
 put(path.join(here, 'fonts/OFL-red-hat-mono.txt'), 'OFL-red-hat-mono.txt');
+put(path.join(here, 'fonts/OFL-noto-sans-kr.txt'), 'OFL-noto-sans-kr.txt');
 put(path.join(here, 'CREDITS.txt'), 'CREDITS.txt');
 put(path.join(here, 'spells.json'), 'spells.json');
 if (fs.existsSync(path.join(here, 'thumbs'))) put(path.join(here, 'thumbs'), 'thumbs');
