@@ -13,6 +13,8 @@ import { patchBlock } from 'patch-block';
 import { block as recipeBlock } from './recipe.json';
 import { createElements } from './elements.js';
 import { settingsFor, slug } from './tuning.js';
+import { spellKo } from './names-ko.js';
+import { mountPanel } from './panel.js';
 
 // Only a safety for a GPU that never answers (ms): a slow PC waits behind the bar, however long it takes.
 const GIVE_UP = 90000;
@@ -62,7 +64,7 @@ function choose(value) {
 	spellEntry = elements.ENTRIES.find((e) => slug(e.name) === value) ?? elements.ENTRIES[0];
 	tune(spellEntry.spell);
 	elements.arena.setFocus?.(new THREE.Color(spellEntry.spell.hue), 2.5);
-	hud.querySelector('.name').textContent = spellEntry.name;
+	hud.querySelector('.name').textContent = spellKo(spellEntry.name);
 	hud.style.setProperty('--accent', hue(spellEntry.element));
 }
 // Mostly the near target, so it fills the view.
@@ -155,6 +157,18 @@ const hooks = {
 const block = patchBlock({ ...recipeBlock, ...hooks });
 Object.assign(v, block.values);
 
+// Patch 호스트 안(iframe)이 아니라 독립 배포판일 때만: 로딩 표시와 설정 패널을 스스로 그린다.
+const embedded = window.parent !== window;
+const loadingEl = document.getElementById('loading');
+if (!embedded) mountPanel(recipeBlock);
+else loadingEl.hidden = true;
+function progress(value, label) {
+	block.progress(value, label);
+	if (embedded || !loadingEl) return;
+	loadingEl.querySelector('.lbl').textContent = label;
+	loadingEl.querySelector('.bar i').style.width = `${Math.round(value * 100)}%`;
+}
+
 // --- casting: a click casts, a drag looks -------------------------------------------------------
 let touched = false; // until the first click the demo casts by itself
 let next = 0.1; // seconds until the next cast by itself
@@ -231,17 +245,18 @@ function loop(now) {
 
 // --- start ----------------------------------------------------------------------------------------
 async function start() {
-	elements = await createElements({ renderer, camera, sky: v.sky, onProgress: (p) => block.progress(p * 0.15, 'Building the spells') });
+	elements = await createElements({ renderer, camera, sky: v.sky, onProgress: (p) => progress(p * 0.15, '주문을 만드는 중') });
 	mark('built');
 	resize();
 	elements.rig.amount = v.shake;
 	elements.view.timeScale = v.speed;
 	choose(v.spell);
-	await elements.warmAll({ until: times.start + GIVE_UP, onProgress: (p) => block.progress(0.15 + p * 0.8, 'Warming the spells') });
+	await elements.warmAll({ until: times.start + GIVE_UP, onProgress: (p) => progress(0.15 + p * 0.8, '주문을 준비하는 중') });
 	mark('warmed');
 	await settle();
 	mark('settled');
-	block.progress(1, 'Warming the spells');
+	progress(1, '주문을 준비하는 중');
+	loadingEl.hidden = true;
 	canvas.style.visibility = '';
 	hud.hidden = false;
 	tip.hidden = false;

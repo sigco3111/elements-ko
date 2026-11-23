@@ -4,242 +4,242 @@
 		"controls": [
 			{
 				"id": "spell",
-				"label": "Spell",
-				"hint": "Which spell a click casts: click anywhere on the ground or at a target.",
+				"label": "주문",
+				"hint": "클릭으로 시전할 주문: 땅이나 표적 아무 곳이나 클릭하세요.",
 				"type": "choice",
 				"options": [
 					{
 						"value": "thunderstrike",
-						"label": "Thunderstrike",
-						"group": "Lightning",
+						"label": "뇌격",
+						"group": "번개",
 						"image": "thumbs/spells/thunderstrike.webp"
 					},
 					{
 						"value": "chain-arc",
-						"label": "Chain Arc",
-						"group": "Lightning",
+						"label": "연쇄 아크",
+						"group": "번개",
 						"image": "thumbs/spells/chain-arc.webp"
 					},
 					{
 						"value": "ball-lightning",
-						"label": "Ball Lightning",
-						"group": "Lightning",
+						"label": "구형 번개",
+						"group": "번개",
 						"image": "thumbs/spells/ball-lightning.webp"
 					},
 					{
 						"value": "thunderstorm",
-						"label": "Thunderstorm",
-						"group": "Lightning",
+						"label": "뇌우",
+						"group": "번개",
 						"image": "thumbs/spells/thunderstorm.webp"
 					},
 					{
 						"value": "fireball",
-						"label": "Fireball",
-						"group": "Fire",
+						"label": "화염구",
+						"group": "불",
 						"image": "thumbs/spells/fireball.webp"
 					},
 					{
 						"value": "inferno",
-						"label": "Inferno",
-						"group": "Fire",
+						"label": "지옥불",
+						"group": "불",
 						"image": "thumbs/spells/inferno.webp"
 					},
 					{
 						"value": "phoenix",
-						"label": "Phoenix",
-						"group": "Fire",
+						"label": "불사조",
+						"group": "불",
 						"image": "thumbs/spells/phoenix.webp"
 					},
 					{
 						"value": "ember-swarm",
-						"label": "Ember Swarm",
-						"group": "Fire",
+						"label": "불씨 떼",
+						"group": "불",
 						"image": "thumbs/spells/ember-swarm.webp"
 					},
 					{
 						"value": "tidal-lance",
-						"label": "Tidal Lance",
-						"group": "Water",
+						"label": "해일의 창",
+						"group": "물",
 						"image": "thumbs/spells/tidal-lance.webp"
 					},
 					{
 						"value": "geyser",
-						"label": "Geyser",
-						"group": "Water",
+						"label": "간헐천",
+						"group": "물",
 						"image": "thumbs/spells/geyser.webp"
 					},
 					{
 						"value": "tsunami",
-						"label": "Tsunami",
-						"group": "Water",
+						"label": "쓰나미",
+						"group": "물",
 						"image": "thumbs/spells/tsunami.webp"
 					},
 					{
 						"value": "glacial-spike",
-						"label": "Glacial Spike",
-						"group": "Ice",
+						"label": "빙하의 가시",
+						"group": "얼음",
 						"image": "thumbs/spells/glacial-spike.webp"
 					},
 					{
 						"value": "ice-wall",
-						"label": "Ice Wall",
-						"group": "Ice",
+						"label": "얼음 벽",
+						"group": "얼음",
 						"image": "thumbs/spells/ice-wall.webp"
 					},
 					{
 						"value": "absolute-zero",
-						"label": "Absolute Zero",
-						"group": "Ice",
+						"label": "절대 영도",
+						"group": "얼음",
 						"image": "thumbs/spells/absolute-zero.webp"
 					},
 					{
 						"value": "blizzard",
-						"label": "Blizzard",
-						"group": "Ice",
+						"label": "눈보라",
+						"group": "얼음",
 						"image": "thumbs/spells/blizzard.webp"
 					},
 					{
 						"value": "upheaval",
-						"label": "Upheaval",
-						"group": "Earth",
+						"label": "지반 융기",
+						"group": "대지",
 						"image": "thumbs/spells/upheaval.webp"
 					},
 					{
 						"value": "meteor",
-						"label": "Meteor",
-						"group": "Earth",
+						"label": "운석",
+						"group": "대지",
 						"image": "thumbs/spells/meteor.webp"
 					},
 					{
 						"value": "fissure",
-						"label": "Fissure",
-						"group": "Earth",
+						"label": "지각 균열",
+						"group": "대지",
 						"image": "thumbs/spells/fissure.webp"
 					},
 					{
 						"value": "lava-geyser",
-						"label": "Lava Geyser",
-						"group": "Earth",
+						"label": "용암 분출",
+						"group": "대지",
 						"image": "thumbs/spells/lava-geyser.webp"
 					},
 					{
 						"value": "cyclone",
-						"label": "Cyclone",
-						"group": "Wind",
+						"label": "회오리",
+						"group": "바람",
 						"image": "thumbs/spells/cyclone.webp"
 					},
 					{
 						"value": "wind-slash",
-						"label": "Wind Slash",
-						"group": "Wind",
+						"label": "바람 베기",
+						"group": "바람",
 						"image": "thumbs/spells/wind-slash.webp"
 					},
 					{
 						"value": "dust-devils",
-						"label": "Dust Devils",
-						"group": "Wind",
+						"label": "먼지 회오리",
+						"group": "바람",
 						"image": "thumbs/spells/dust-devils.webp"
 					},
 					{
 						"value": "singularity",
-						"label": "Singularity",
-						"group": "Void",
+						"label": "특이점",
+						"group": "공허",
 						"image": "thumbs/spells/singularity.webp"
 					},
 					{
 						"value": "rift",
-						"label": "Rift",
-						"group": "Void",
+						"label": "차원 균열",
+						"group": "공허",
 						"image": "thumbs/spells/rift.webp"
 					},
 					{
 						"value": "portal",
-						"label": "Portal",
-						"group": "Void",
+						"label": "포털",
+						"group": "공허",
 						"image": "thumbs/spells/portal.webp"
 					},
 					{
 						"value": "judgment",
-						"label": "Judgment",
-						"group": "Light",
+						"label": "심판",
+						"group": "빛",
 						"image": "thumbs/spells/judgment.webp"
 					},
 					{
 						"value": "radiant-lance",
-						"label": "Radiant Lance",
-						"group": "Light",
+						"label": "광휘의 창",
+						"group": "빛",
 						"image": "thumbs/spells/radiant-lance.webp"
 					},
 					{
 						"value": "solar-flare",
-						"label": "Solar Flare",
-						"group": "Light",
+						"label": "태양 플레어",
+						"group": "빛",
 						"image": "thumbs/spells/solar-flare.webp"
 					},
 					{
 						"value": "aurora-veil",
-						"label": "Aurora Veil",
-						"group": "Light",
+						"label": "오로라 장막",
+						"group": "빛",
 						"image": "thumbs/spells/aurora-veil.webp"
 					},
 					{
 						"value": "supernova",
-						"label": "Supernova",
-						"group": "Light",
+						"label": "초신성",
+						"group": "빛",
 						"image": "thumbs/spells/supernova.webp"
 					},
 					{
 						"value": "toxic-bloom",
-						"label": "Toxic Bloom",
-						"group": "Acid",
+						"label": "맹독의 꽃",
+						"group": "산성",
 						"image": "thumbs/spells/toxic-bloom.webp"
 					},
 					{
 						"value": "corrosion-cloud",
-						"label": "Corrosion Cloud",
-						"group": "Acid",
+						"label": "부식 구름",
+						"group": "산성",
 						"image": "thumbs/spells/corrosion-cloud.webp"
 					},
 					{
 						"value": "plague-swarm",
-						"label": "Plague Swarm",
-						"group": "Acid",
+						"label": "역병 떼",
+						"group": "산성",
 						"image": "thumbs/spells/plague-swarm.webp"
 					},
 					{
 						"value": "arcane-barrage",
-						"label": "Arcane Barrage",
-						"group": "Arcane",
+						"label": "비전 탄막",
+						"group": "비전",
 						"image": "thumbs/spells/arcane-barrage.webp"
 					},
 					{
 						"value": "aegis",
-						"label": "Aegis",
-						"group": "Arcane",
+						"label": "아이기스",
+						"group": "비전",
 						"image": "thumbs/spells/aegis.webp"
 					},
 					{
 						"value": "starfall",
-						"label": "Starfall",
-						"group": "Arcane",
+						"label": "별똥",
+						"group": "비전",
 						"image": "thumbs/spells/starfall.webp"
 					},
 					{
 						"value": "frozen-lightning",
-						"label": "Frozen Lightning",
-						"group": "Two at once",
+						"label": "얼어붙은 번개",
+						"group": "혼합",
 						"image": "thumbs/spells/frozen-lightning.webp"
 					},
 					{
 						"value": "fire-tornado",
-						"label": "Fire Tornado",
-						"group": "Two at once",
+						"label": "불 회오리",
+						"group": "혼합",
 						"image": "thumbs/spells/fire-tornado.webp"
 					},
 					{
 						"value": "black-flame",
-						"label": "Black Flame",
-						"group": "Two at once",
+						"label": "검은 불꽃",
+						"group": "혼합",
 						"image": "thumbs/spells/black-flame.webp"
 					}
 				],
@@ -248,8 +248,8 @@
 			},
 			{
 				"id": "size",
-				"label": "Size",
-				"hint": "How big each cast is.",
+				"label": "크기",
+				"hint": "시전 하나의 크기.",
 				"type": "number",
 				"min": 0.4,
 				"max": 2,
@@ -260,8 +260,8 @@
 			},
 			{
 				"id": "intensity",
-				"label": "Intensity",
-				"hint": "How strong and bright each cast is.",
+				"label": "강도",
+				"hint": "시전 하나의 세기와 밝기.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -272,8 +272,8 @@
 			},
 			{
 				"id": "speed",
-				"label": "Speed",
-				"hint": "How fast everything plays: below 1 is slow motion.",
+				"label": "속도",
+				"hint": "전체 재생 속도: 1 미만이면 슬로모션.",
 				"type": "number",
 				"min": 0.1,
 				"max": 2,
@@ -284,68 +284,68 @@
 			},
 			{
 				"id": "sky",
-				"label": "Sky",
-				"hint": "The time of day over the training ground. People always see dusk.",
+				"label": "하늘",
+				"hint": "훈련장 위의 시간대. 다른 사람에게는 항상 해 질 녘으로 보입니다.",
 				"type": "choice",
 				"options": [
 					{
 						"value": "dusk",
-						"label": "Dusk"
+						"label": "해 질 녘"
 					},
 					{
 						"value": "noon",
-						"label": "Noon"
+						"label": "한낮"
 					},
 					{
 						"value": "night",
-						"label": "Night"
+						"label": "밤"
 					}
 				],
 				"default": "dusk"
 			},
 			{
 				"id": "look",
-				"label": "Look",
-				"hint": "One of the spell's three named looks (presets in spells.json), or its own.",
+				"label": "모양",
+				"hint": "주문의 세 가지 지정 모양(spells.json의 프리셋) 중 하나, 또는 고유 모양.",
 				"type": "choice",
 				"options": [
 					{
 						"value": "own",
-						"label": "Its own"
+						"label": "고유 모양"
 					},
 					{
 						"value": "first",
-						"label": "First look"
+						"label": "첫 번째 모양"
 					},
 					{
 						"value": "second",
-						"label": "Second look"
+						"label": "두 번째 모양"
 					},
 					{
 						"value": "third",
-						"label": "Third look"
+						"label": "세 번째 모양"
 					}
 				],
 				"default": "own"
 			},
 			{
 				"id": "auto",
-				"label": "Keep casting",
-				"hint": "Keeps casting the chosen spell at the targets.",
+				"label": "계속 시전",
+				"hint": "표적에 선택한 주문을 계속 시전합니다.",
 				"type": "toggle",
 				"default": false
 			},
 			{
 				"id": "auto.all",
-				"label": "Cast them all",
-				"hint": "While keep casting is on, goes through every spell in turn.",
+				"label": "전부 시전",
+				"hint": "'계속 시전'이 켜져 있는 동안 모든 주문을 차례로 시전합니다.",
 				"type": "toggle",
 				"default": false
 			},
 			{
 				"id": "shake",
-				"label": "Camera shake",
-				"hint": "How much big impacts shake the camera.",
+				"label": "카메라 흔들림",
+				"hint": "큰 충격이 카메라를 흔드는 정도.",
 				"type": "number",
 				"min": 0,
 				"max": 2,
@@ -355,15 +355,15 @@
 			},
 			{
 				"id": "reduced",
-				"label": "Reduce flashes",
-				"hint": "Dims flashes to at most three a second, and cuts shake, hitstop and FOV punch.",
+				"label": "섬광 줄이기",
+				"hint": "섬광을 초당 최대 세 번으로 줄이고, 흔들림·히트스톱·시야각 효과를 줄입니다.",
 				"type": "toggle",
 				"default": false
 			},
 			{
 				"id": "exposure",
-				"label": "Exposure",
-				"hint": "Brightens or darkens the whole picture.",
+				"label": "노출",
+				"hint": "전체 화면을 밝게 또는 어둡게 합니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 4,
@@ -373,8 +373,8 @@
 			},
 			{
 				"id": "bloom",
-				"label": "Bloom",
-				"hint": "How much bright things glow out into the picture.",
+				"label": "블룸",
+				"hint": "밝은 것이 화면으로 번져 나가는 정도.",
 				"type": "number",
 				"min": 0,
 				"max": 0.6,
@@ -383,8 +383,8 @@
 			},
 			{
 				"id": "contrast",
-				"label": "Contrast",
-				"hint": "The final picture's contrast.",
+				"label": "대비",
+				"hint": "최종 화면의 대비.",
 				"type": "number",
 				"min": 0.7,
 				"max": 1.6,
@@ -393,8 +393,8 @@
 			},
 			{
 				"id": "saturation",
-				"label": "Saturation",
-				"hint": "The final picture's colour strength.",
+				"label": "채도",
+				"hint": "최종 화면의 색 강도.",
 				"type": "number",
 				"min": 0,
 				"max": 2,
@@ -403,8 +403,8 @@
 			},
 			{
 				"id": "vignette",
-				"label": "Vignette",
-				"hint": "How much the corners of the picture darken.",
+				"label": "비네트",
+				"hint": "화면 모서리가 어두워지는 정도.",
 				"type": "number",
 				"min": 0,
 				"max": 1,
@@ -413,8 +413,8 @@
 			},
 			{
 				"id": "motion-blur",
-				"label": "Motion blur",
-				"hint": "How much the picture blurs with fast camera moves.",
+				"label": "모션 블러",
+				"hint": "카메라가 빠르게 움직일 때 화면이 흐려지는 정도.",
 				"type": "number",
 				"min": 0,
 				"max": 1,
@@ -423,8 +423,8 @@
 			},
 			{
 				"id": "wind",
-				"label": "Wind",
-				"hint": "A steady wind that pushes smoke, dust and sparks.",
+				"label": "바람",
+				"hint": "연기·먼지·불똥을 미는 일정한 바람.",
 				"type": "number",
 				"min": 0,
 				"max": 12,
@@ -434,8 +434,8 @@
 			},
 			{
 				"id": "wind.direction",
-				"label": "Wind direction",
-				"hint": "Where the wind blows towards.",
+				"label": "바람 방향",
+				"hint": "바람이 불어가는 쪽.",
 				"type": "number",
 				"min": -180,
 				"max": 180,
@@ -445,8 +445,8 @@
 			},
 			{
 				"id": "fov",
-				"label": "Field of view",
-				"hint": "The camera's vertical field of view.",
+				"label": "시야각",
+				"hint": "카메라의 수직 시야각.",
 				"type": "number",
 				"min": 25,
 				"max": 90,
@@ -456,8 +456,8 @@
 			},
 			{
 				"id": "particles",
-				"label": "Particle budget",
-				"hint": "How many particles every spell emits: lower is cheaper.",
+				"label": "입자 양",
+				"hint": "주문마다 방출하는 입자 수: 낮을수록 부하가 적습니다.",
 				"type": "number",
 				"min": 0.1,
 				"max": 2,
@@ -467,29 +467,29 @@
 			},
 			{
 				"id": "color.on",
-				"label": "Own colours",
-				"hint": "Replaces the spell's main colours with the two below.",
+				"label": "색 직접 지정",
+				"hint": "주문의 기본 색들을 아래 두 색으로 바꿉니다.",
 				"type": "toggle",
 				"default": false
 			},
 			{
 				"id": "color.main",
-				"label": "Main colour",
-				"hint": "The spell's main colour, while own colours is on.",
+				"label": "기본 색",
+				"hint": "색 직접 지정이 켜져 있을 때의 주문 기본 색.",
 				"type": "color",
 				"default": "#33d6ff"
 			},
 			{
 				"id": "color.second",
-				"label": "Second colour",
-				"hint": "The spell's second colour, while own colours is on.",
+				"label": "보조 색",
+				"hint": "색 직접 지정이 켜져 있을 때의 주문 보조 색.",
 				"type": "color",
 				"default": "#ff4fd8"
 			},
 			{
 				"id": "tune.height",
-				"label": "Height",
-				"hint": "How tall, for spells that rise. Multiplies the spell's own value.",
+				"label": "높이",
+				"hint": "솟아오르는 주문의 높이. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -499,8 +499,8 @@
 			},
 			{
 				"id": "tune.duration",
-				"label": "Duration",
-				"hint": "How long it lasts, for spells that last. Multiplies the spell's own value.",
+				"label": "지속 시간",
+				"hint": "유지되는 주문의 지속 시간. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -510,8 +510,8 @@
 			},
 			{
 				"id": "tune.hold",
-				"label": "Hold",
-				"hint": "How long it stays before it ends, for spells that hold. Multiplies the spell's own value.",
+				"label": "유지",
+				"hint": "머무는 주문이 끝나기까지의 시간. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -521,8 +521,8 @@
 			},
 			{
 				"id": "tune.flight",
-				"label": "Flight speed",
-				"hint": "How fast it travels, for spells that fly. Multiplies the spell's own value.",
+				"label": "비행 속도",
+				"hint": "날아가는 주문의 속도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -532,8 +532,8 @@
 			},
 			{
 				"id": "tune.haze",
-				"label": "Heat haze",
-				"hint": "How much it bends the air behind it. Multiplies the spell's own value.",
+				"label": "아지랑이",
+				"hint": "뒤의 공기를 일그러뜨리는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -543,8 +543,8 @@
 			},
 			{
 				"id": "tune.smoke",
-				"label": "Smoke",
-				"hint": "How much smoke it gives off. Multiplies the spell's own value.",
+				"label": "연기",
+				"hint": "연기를 내뿜는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -554,8 +554,8 @@
 			},
 			{
 				"id": "tune.dust",
-				"label": "Dust",
-				"hint": "How much dust it raises. Multiplies the spell's own value.",
+				"label": "먼지",
+				"hint": "먼지를 일으키는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -565,8 +565,8 @@
 			},
 			{
 				"id": "tune.mist",
-				"label": "Mist",
-				"hint": "How much mist it gives off. Multiplies the spell's own value.",
+				"label": "안개",
+				"hint": "안개를 내뿜는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -576,8 +576,8 @@
 			},
 			{
 				"id": "tune.sparks",
-				"label": "Sparks",
-				"hint": "How many sparks it throws. Multiplies the spell's own value.",
+				"label": "불똥",
+				"hint": "불똥을 튀기는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -587,8 +587,8 @@
 			},
 			{
 				"id": "tune.embers",
-				"label": "Embers",
-				"hint": "How many embers it throws. Multiplies the spell's own value.",
+				"label": "불씨",
+				"hint": "불씨를 튀기는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -598,8 +598,8 @@
 			},
 			{
 				"id": "tune.debris",
-				"label": "Debris",
-				"hint": "How much rock and rubble it throws. Multiplies the spell's own value.",
+				"label": "파편",
+				"hint": "돌·잔해를 튀기는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -609,8 +609,8 @@
 			},
 			{
 				"id": "tune.scorch",
-				"label": "Scorch",
-				"hint": "How much it burns the floor. Multiplies the spell's own value.",
+				"label": "그을음",
+				"hint": "바닥을 태우는 정도. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -620,8 +620,8 @@
 			},
 			{
 				"id": "tune.frost",
-				"label": "Frost",
-				"hint": "How far frost spreads on the floor. Multiplies the spell's own value.",
+				"label": "서리",
+				"hint": "바닥에 서리가 퍼지는 범위. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -631,8 +631,8 @@
 			},
 			{
 				"id": "tune.glints",
-				"label": "Glints",
-				"hint": "How many ice glints catch the light. Multiplies the spell's own value.",
+				"label": "얼음 반짝임",
+				"hint": "빛을 받아 반짝이는 얼음 결정의 수. 주문 고유 값에 곱해집니다.",
 				"type": "number",
 				"min": 0.25,
 				"max": 2.5,
@@ -645,8 +645,8 @@
 		"triggers": [
 			{
 				"id": "clear",
-				"label": "Clear",
-				"hint": "Takes away every cast, the scorch and frost on the floor and what the targets took."
+				"label": "지우기",
+				"hint": "모든 시전과 바닥의 그을음·서리, 표적이 입은 것을 치웁니다."
 			}
 		]
 	},

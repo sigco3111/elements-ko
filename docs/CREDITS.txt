@@ -1,0 +1,11 @@
+Elements (a block demo on Patch)
+
+Ultra Elements by Humpalumps, MIT, (c) 2026 Humpalumps: the 39 spells, the training ground and its targets, the sky,
+  the particles, fluids, volumes and post. Everything is drawn from code; it ships no textures, models or sounds.
+  https://github.com/Humpalumps/ultra-elements  Licence: LICENSE-ultra-elements.txt.
+  Code it adapts from three.js, Ultra-Water, WebGL Water (Evan Wallace), Hash without Sine (Dave Hoskins) and
+  Inigo Quilez (all MIT): THIRD_PARTY_NOTICES-ultra-elements.md.
+three.js: MIT, the three.js authors. https://github.com/mrdoob/three.js
+Red Hat Mono (assets/red-hat-mono-*.woff2): The Red Hat Project Authors, SIL Open Font License 1.1: OFL-red-hat-mono.txt.
+Patch: elements.js (adapted from Ultra Elements' main.js), the demo page, the plain controls and the choices'
+  pictures (thumbs/, stills of this demo), MIT: LICENSE.txt.

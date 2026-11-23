@@ -1,0 +1,4556 @@
+[
+	{
+		"id": "lightning",
+		"name": "Lightning",
+		"element": "lightning",
+		"file": "lib/ultra-elements/src/spells/lightning.js",
+		"forms": [
+			"Thunderstrike",
+			"Chain Arc"
+		],
+		"shape": "strike",
+		"timing": {
+			"charge": 0.6,
+			"impact": 0.8,
+			"linger": 1.6,
+			"sustain": 1.8
+		},
+		"size": [
+			"crawl",
+			"cloud"
+		],
+		"intensity": [
+			"intensity",
+			"sparks"
+		],
+		"colours": [
+			"glow",
+			"core"
+		],
+		"settings": {
+			"intensity": {
+				"default": 1,
+				"range": [
+					0.1,
+					3,
+					0.01
+				]
+			},
+			"branches": {
+				"default": 8,
+				"range": [
+					0,
+					8,
+					1
+				]
+			},
+			"jag": {
+				"default": 0.085,
+				"range": [
+					0.02,
+					0.3,
+					0.005
+				]
+			},
+			"restrikes": {
+				"default": 3,
+				"range": [
+					1,
+					5,
+					1
+				]
+			},
+			"sparks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"crawl": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"cloud": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"damp": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"core": {
+				"default": "#d6e6ff"
+			},
+			"glow": {
+				"default": "#5b78ff"
+			}
+		},
+		"presets": {
+			"crimson": {
+				"core": "#ffd0d0",
+				"glow": "#ff2a3c"
+			},
+			"violet": {
+				"core": "#efd8ff",
+				"glow": "#8a3dff"
+			},
+			"white hot": {
+				"core": "#ffffff",
+				"glow": "#b8c8ff",
+				"intensity": 1.6
+			}
+		}
+	},
+	{
+		"id": "ball-lightning",
+		"name": "Ball Lightning",
+		"element": "lightning",
+		"file": "lib/ultra-elements/src/spells/lightning/ball-lightning.js",
+		"forms": [
+			"Ball Lightning"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.9,
+			"impact": 0.5,
+			"linger": 2.6,
+			"sustain": 8
+		},
+		"size": [
+			"size",
+			"reach"
+		],
+		"intensity": [
+			"intensity",
+			"sparks"
+		],
+		"colours": [
+			"plasma",
+			"glow"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2.5,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 3.6,
+				"range": [
+					1,
+					12,
+					0.1
+				]
+			},
+			"wander": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0.1,
+					3,
+					0.01
+				]
+			},
+			"arcs": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"reach": {
+				"default": 5.5,
+				"range": [
+					1,
+					9,
+					0.1
+				]
+			},
+			"instability": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"blast": {
+				"default": 1,
+				"range": [
+					0.3,
+					2.5,
+					0.01
+				]
+			},
+			"bolts": {
+				"default": 12,
+				"range": [
+					0,
+					14,
+					1
+				]
+			},
+			"sparks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"core": {
+				"default": "#eef3ff"
+			},
+			"glow": {
+				"default": "#5b78ff"
+			},
+			"plasma": {
+				"default": "#a48dff"
+			}
+		},
+		"presets": {
+			"st elmo": {
+				"core": "#e8fffb",
+				"glow": "#1fd6c8",
+				"plasma": "#7fffe6",
+				"wander": 1.4
+			},
+			"ember": {
+				"core": "#fff2dc",
+				"glow": "#ff7a1f",
+				"plasma": "#ffc35a",
+				"speed": 2.6,
+				"instability": 1.4
+			},
+			"violet storm": {
+				"core": "#f5e8ff",
+				"glow": "#8a3dff",
+				"plasma": "#ff6bf0",
+				"arcs": 1.8,
+				"blast": 1.4,
+				"intensity": 1.3
+			}
+		}
+	},
+	{
+		"id": "thunderstorm",
+		"name": "Thunderstorm",
+		"element": "lightning",
+		"file": "lib/ultra-elements/src/spells/lightning/thunderstorm.js",
+		"forms": [
+			"Thunderstorm"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1.6,
+			"impact": 0.3,
+			"linger": 11
+		},
+		"size": [
+			"radius"
+		],
+		"intensity": [
+			"intensity",
+			"strikes"
+		],
+		"colours": [
+			"glow",
+			"core"
+		],
+		"settings": {
+			"radius": {
+				"default": 9,
+				"range": [
+					5,
+					16,
+					0.1
+				]
+			},
+			"duration": {
+				"default": 8,
+				"range": [
+					3,
+					16,
+					0.1
+				]
+			},
+			"height": {
+				"default": 9.5,
+				"range": [
+					7.5,
+					14,
+					0.1
+				]
+			},
+			"strikes": {
+				"default": 1,
+				"range": [
+					0.2,
+					2.5,
+					0.01
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0.2,
+					2.5,
+					0.01
+				]
+			},
+			"branches": {
+				"default": 7,
+				"range": [
+					0,
+					8,
+					1
+				]
+			},
+			"jag": {
+				"default": 0.12,
+				"range": [
+					0.04,
+					0.25,
+					0.005
+				]
+			},
+			"spin": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"rain": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"sheets": {
+				"default": 1,
+				"range": [
+					0,
+					2.5,
+					0.01
+				]
+			},
+			"wind": {
+				"default": 1,
+				"range": [
+					0,
+					2.5,
+					0.01
+				]
+			},
+			"angle": {
+				"default": 195,
+				"range": [
+					0,
+					360,
+					1
+				]
+			},
+			"gust": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"darkness": {
+				"default": 1,
+				"range": [
+					0,
+					1.5,
+					0.01
+				]
+			},
+			"wetness": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"core": {
+				"default": "#dfe9ff"
+			},
+			"glow": {
+				"default": "#6f80ff"
+			},
+			"cloud": {
+				"default": "#8b8e92"
+			}
+		},
+		"presets": {
+			"supercell": {
+				"radius": 13,
+				"spin": 1.9,
+				"strikes": 0.85,
+				"height": 10.5,
+				"rain": 0.7,
+				"sheets": 1.5,
+				"cloud": "#6f7f8c"
+			},
+			"monsoon": {
+				"rain": 1.9,
+				"sheets": 1.7,
+				"strikes": 0.55,
+				"wind": 1.5,
+				"wetness": 1.6,
+				"cloud": "#8a919c"
+			},
+			"dry lightning": {
+				"rain": 0.08,
+				"sheets": 0.3,
+				"strikes": 1.9,
+				"wetness": 0.1,
+				"gust": 1.5,
+				"cloud": "#8a7a6c",
+				"glow": "#a07dff",
+				"core": "#efe6ff"
+			}
+		}
+	},
+	{
+		"id": "fire",
+		"name": "Fire",
+		"element": "fire",
+		"file": "lib/ultra-elements/src/spells/fire.js",
+		"forms": [
+			"Fireball",
+			"Inferno"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.7,
+			"impact": 0.25,
+			"linger": 5,
+			"sustain": 2.6
+		},
+		"size": [
+			"size"
+		],
+		"intensity": [
+			"intensity",
+			"embers"
+		],
+		"colours": [
+			"tint"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.3,
+					3,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 18,
+				"range": [
+					4,
+					40,
+					0.1
+				]
+			},
+			"temperature": {
+				"default": 1900,
+				"range": [
+					900,
+					6500,
+					10
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"soot": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"embers": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"smoke": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"scorch": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"height": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#ffffff"
+			}
+		},
+		"presets": {
+			"hellfire": {
+				"temperature": 1500,
+				"tint": "#ff6a4a",
+				"smoke": 1.6,
+				"soot": 1.6,
+				"intensity": 1.2
+			},
+			"blue flame": {
+				"temperature": 6500,
+				"tint": "#8fb8ff",
+				"smoke": 0.3,
+				"soot": 0.15
+			},
+			"soulfire": {
+				"temperature": 2600,
+				"tint": "#3cff9a",
+				"smoke": 0.5,
+				"soot": 0.5
+			}
+		}
+	},
+	{
+		"id": "phoenix",
+		"name": "Phoenix",
+		"element": "fire",
+		"file": "lib/ultra-elements/src/spells/fire/phoenix.js",
+		"forms": [
+			"Phoenix"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.9,
+			"impact": 0.35,
+			"linger": 3.6,
+			"sustain": 6
+		},
+		"size": [
+			"size"
+		],
+		"intensity": [
+			"intensity",
+			"embers"
+		],
+		"colours": [
+			"tint"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 9,
+				"range": [
+					4,
+					20,
+					0.1
+				]
+			},
+			"arc": {
+				"default": 1,
+				"range": [
+					0.3,
+					2,
+					0.01
+				]
+			},
+			"swing": {
+				"default": 1,
+				"range": [
+					-2,
+					2,
+					0.01
+				]
+			},
+			"flap": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"temperature": {
+				"default": 1900,
+				"range": [
+					900,
+					6500,
+					10
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"flames": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"feathers": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"embers": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"tail": {
+				"default": 1,
+				"range": [
+					0.3,
+					2,
+					0.01
+				]
+			},
+			"smoke": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"scorch": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#ffffff"
+			}
+		},
+		"presets": {
+			"sun phoenix": {
+				"temperature": 2600,
+				"intensity": 1.3,
+				"tail": 1.3,
+				"smoke": 0.4
+			},
+			"azure phoenix": {
+				"temperature": 6500,
+				"tint": "#8fb8ff",
+				"smoke": 0.3,
+				"embers": 1.4
+			},
+			"ember hawk": {
+				"size": 0.7,
+				"speed": 13,
+				"arc": 0.6,
+				"tail": 0.7,
+				"flap": 1.4,
+				"feathers": 0.6,
+				"temperature": 1500,
+				"tint": "#ff7a5a"
+			}
+		}
+	},
+	{
+		"id": "ember-swarm",
+		"name": "Ember Swarm",
+		"element": "fire",
+		"file": "lib/ultra-elements/src/spells/fire/ember-swarm.js",
+		"forms": [
+			"Ember Swarm"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 2.6,
+			"impact": 1.6,
+			"linger": 6.800000000000001
+		},
+		"size": [
+			"size",
+			"radius"
+		],
+		"intensity": [
+			"glow",
+			"exposure"
+		],
+		"colours": [
+			"arcaneColor",
+			"ash"
+		],
+		"settings": {
+			"count": {
+				"default": 1,
+				"range": [
+					0.1,
+					1,
+					0.01
+				]
+			},
+			"size": {
+				"default": 1,
+				"range": [
+					0.5,
+					2.5,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 1,
+				"range": [
+					0.5,
+					2,
+					0.01
+				]
+			},
+			"temperature": {
+				"default": 1500,
+				"range": [
+					1000,
+					3000,
+					10
+				]
+			},
+			"glow": {
+				"default": 1,
+				"range": [
+					0,
+					4,
+					0.01
+				]
+			},
+			"exposure": {
+				"default": 1,
+				"range": [
+					0.2,
+					3,
+					0.01
+				]
+			},
+			"arcane": {
+				"default": 0.2,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"flock": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"turbulence": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"radius": {
+				"default": 1.05,
+				"range": [
+					0.7,
+					2,
+					0.01
+				]
+			},
+			"hold": {
+				"default": 2.4,
+				"range": [
+					1,
+					6,
+					0.1
+				]
+			},
+			"shed": {
+				"default": 0.3,
+				"range": [
+					0,
+					0.7,
+					0.01
+				]
+			},
+			"cling": {
+				"default": 0.1,
+				"range": [
+					0,
+					0.4,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"smoke": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"scorch": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"arcaneColor": {
+				"default": "#ff2fb4"
+			},
+			"ash": {
+				"default": "#2a2623"
+			}
+		},
+		"presets": {
+			"forge sparks": {
+				"temperature": 2200,
+				"exposure": 1.7,
+				"size": 0.8,
+				"speed": 1.35,
+				"turbulence": 0.7,
+				"arcane": 0.15,
+				"smoke": 0.5
+			},
+			"fireflies": {
+				"temperature": 1250,
+				"count": 0.45,
+				"exposure": 0.7,
+				"speed": 0.65,
+				"size": 1.2,
+				"glow": 1.8,
+				"haze": 0.2,
+				"smoke": 0.2,
+				"scorch": 0.3,
+				"arcane": 0
+			},
+			"witch fire": {
+				"temperature": 2300,
+				"arcane": 1,
+				"glow": 1.2,
+				"hold": 4,
+				"radius": 1.3,
+				"shed": 0.45,
+				"arcaneColor": "#e01fff"
+			}
+		}
+	},
+	{
+		"id": "water",
+		"name": "Water",
+		"element": "water",
+		"file": "lib/ultra-elements/src/spells/water.js",
+		"forms": [
+			"Tidal Lance",
+			"Geyser"
+		],
+		"shape": "beam",
+		"timing": {
+			"charge": 0.6,
+			"impact": 0.35,
+			"linger": 3,
+			"sustain": 1.4
+		},
+		"size": [
+			"size",
+			"height"
+		],
+		"intensity": [
+			"droplets",
+			"splash",
+			"mist"
+		],
+		"colours": [
+			"tint"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.5,
+					2,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 32,
+				"range": [
+					12,
+					60,
+					0.5
+				]
+			},
+			"whip": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"height": {
+				"default": 4.5,
+				"range": [
+					1.5,
+					8,
+					0.1
+				]
+			},
+			"droplets": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"mist": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"splash": {
+				"default": 1,
+				"range": [
+					0.3,
+					2,
+					0.01
+				]
+			},
+			"wetness": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"clarity": {
+				"default": 1,
+				"range": [
+					0.2,
+					3,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#2fa8ff"
+			}
+		},
+		"presets": {
+			"tropical": {
+				"tint": "#1fe0c8",
+				"clarity": 1.6
+			},
+			"abyssal": {
+				"tint": "#1a4dff",
+				"clarity": 0.45,
+				"mist": 1.4
+			},
+			"violet tide": {
+				"tint": "#9a6bff",
+				"clarity": 0.9
+			}
+		}
+	},
+	{
+		"id": "tsunami",
+		"name": "Tsunami",
+		"element": "water",
+		"file": "lib/ultra-elements/src/spells/water/tsunami.js",
+		"forms": [
+			"Tsunami"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1,
+			"impact": 2.8,
+			"linger": 3.2
+		},
+		"size": [
+			"height",
+			"width"
+		],
+		"intensity": [
+			"foam",
+			"spray",
+			"mist"
+		],
+		"colours": [
+			"tint",
+			"foamColor"
+		],
+		"settings": {
+			"height": {
+				"default": 6,
+				"range": [
+					2,
+					8,
+					0.1
+				]
+			},
+			"width": {
+				"default": 13,
+				"range": [
+					6,
+					20,
+					0.1
+				]
+			},
+			"speed": {
+				"default": 1,
+				"range": [
+					0.5,
+					1.8,
+					0.01
+				]
+			},
+			"curl": {
+				"default": 1,
+				"range": [
+					0.4,
+					1.5,
+					0.01
+				]
+			},
+			"peel": {
+				"default": 1,
+				"range": [
+					0,
+					2.5,
+					0.01
+				]
+			},
+			"angle": {
+				"default": -60,
+				"range": [
+					-90,
+					90,
+					1
+				]
+			},
+			"foam": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"spray": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"mist": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"wetness": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"clarity": {
+				"default": 1,
+				"range": [
+					0.2,
+					3,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#2fe4ff"
+			},
+			"foamColor": {
+				"default": "#f2f6f7"
+			}
+		},
+		"presets": {
+			"rogue wave": {
+				"height": 7.5,
+				"width": 17,
+				"speed": 0.85,
+				"clarity": 0.7,
+				"spray": 1.4,
+				"mist": 1.4
+			},
+			"tropical": {
+				"tint": "#1fe0c8",
+				"clarity": 1.7,
+				"foam": 1.2,
+				"height": 4
+			},
+			"abyssal": {
+				"tint": "#1a4dff",
+				"clarity": 0.6,
+				"foam": 0.7,
+				"mist": 1.6,
+				"foamColor": "#cfe0f0"
+			}
+		}
+	},
+	{
+		"id": "ice",
+		"name": "Ice",
+		"element": "ice",
+		"file": "lib/ultra-elements/src/spells/ice.js",
+		"forms": [
+			"Glacial Spike",
+			"Ice Wall"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.8,
+			"impact": 0.3,
+			"linger": 6.5
+		},
+		"size": [
+			"size",
+			"wallHeight",
+			"wallWidth"
+		],
+		"intensity": [
+			"glints",
+			"shards",
+			"mist",
+			"nova"
+		],
+		"colours": [
+			"tint",
+			"glow"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2.5,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 24,
+				"range": [
+					6,
+					50,
+					0.1
+				]
+			},
+			"ior": {
+				"default": 1.31,
+				"range": [
+					1,
+					2.4,
+					0.01
+				]
+			},
+			"clarity": {
+				"default": 1,
+				"range": [
+					0.2,
+					4,
+					0.01
+				]
+			},
+			"frost": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"interior": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"glints": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"mist": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"motes": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"shards": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"nova": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"spikes": {
+				"default": 8,
+				"range": [
+					0,
+					8,
+					1
+				]
+			},
+			"wallSpikes": {
+				"default": 11,
+				"range": [
+					3,
+					15,
+					1
+				]
+			},
+			"wallHeight": {
+				"default": 3,
+				"range": [
+					1,
+					4.5,
+					0.01
+				]
+			},
+			"wallWidth": {
+				"default": 7.5,
+				"range": [
+					3,
+					12,
+					0.1
+				]
+			},
+			"wallCurve": {
+				"default": 1,
+				"range": [
+					-1,
+					2,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#a8dcff"
+			},
+			"glow": {
+				"default": "#5fd0ff"
+			}
+		},
+		"presets": {
+			"glacier": {
+				"tint": "#3fa6ff",
+				"clarity": 1.8,
+				"glow": "#3f86ff",
+				"frost": 0.7
+			},
+			"rime": {
+				"tint": "#d2f2ff",
+				"clarity": 0.6,
+				"frost": 1.8,
+				"interior": 1.8,
+				"mist": 1.7,
+				"glow": "#bfefff"
+			},
+			"black ice": {
+				"tint": "#2f7d8f",
+				"clarity": 3,
+				"glints": 2.2,
+				"frost": 0.4,
+				"mist": 0.6,
+				"glow": "#6ff6ff"
+			}
+		}
+	},
+	{
+		"id": "absolute-zero",
+		"name": "Absolute Zero",
+		"element": "ice",
+		"file": "lib/ultra-elements/src/spells/ice/absolute-zero.js",
+		"forms": [
+			"Absolute Zero"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1.3,
+			"impact": 0.25,
+			"linger": 6
+		},
+		"size": [
+			"radius"
+		],
+		"intensity": [
+			"frost",
+			"glints",
+			"shards"
+		],
+		"colours": [
+			"tint",
+			"glow"
+		],
+		"settings": {
+			"radius": {
+				"default": 3.6,
+				"range": [
+					2,
+					6,
+					0.01
+				]
+			},
+			"drop": {
+				"default": 2.6,
+				"range": [
+					2,
+					10,
+					0.1
+				]
+			},
+			"hold": {
+				"default": 2.6,
+				"range": [
+					1,
+					5,
+					0.05
+				]
+			},
+			"desaturate": {
+				"default": 0.85,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"negative": {
+				"default": 1,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"lens": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"frost": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"cracks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"shards": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"dust": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"mist": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"glints": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#a9d8ff"
+			},
+			"glow": {
+				"default": "#62d4ff"
+			}
+		},
+		"presets": {
+			"glacier": {
+				"tint": "#6fb4ff",
+				"glow": "#3f86ff",
+				"desaturate": 0.7,
+				"haze": 1.5
+			},
+			"whiteout": {
+				"tint": "#e6f4ff",
+				"glow": "#bfefff",
+				"desaturate": 1,
+				"haze": 2.4,
+				"mist": 2,
+				"dust": 2.2
+			},
+			"cryo": {
+				"tint": "#8ffff0",
+				"glow": "#2fffd8",
+				"cracks": 2.2,
+				"radius": 4.6,
+				"hold": 3.2
+			}
+		}
+	},
+	{
+		"id": "blizzard",
+		"name": "Blizzard",
+		"element": "ice",
+		"file": "lib/ultra-elements/src/spells/ice/blizzard.js",
+		"forms": [
+			"Blizzard"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1,
+			"impact": 0.35,
+			"linger": 7.6
+		},
+		"size": [
+			"radius"
+		],
+		"intensity": [
+			"strength",
+			"snow",
+			"streaks"
+		],
+		"colours": [
+			"glow",
+			"air"
+		],
+		"settings": {
+			"radius": {
+				"default": 4,
+				"range": [
+					2,
+					6,
+					0.01
+				]
+			},
+			"duration": {
+				"default": 6,
+				"range": [
+					2,
+					12,
+					0.1
+				]
+			},
+			"strength": {
+				"default": 1,
+				"range": [
+					0.2,
+					2.5,
+					0.01
+				]
+			},
+			"wind": {
+				"default": 10,
+				"range": [
+					3,
+					20,
+					0.1
+				]
+			},
+			"angle": {
+				"default": 25,
+				"range": [
+					-90,
+					90,
+					1
+				]
+			},
+			"snow": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"visibility": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"spindrift": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"streaks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"hail": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"refraction": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"frost": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"freeze": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"air": {
+				"default": "#dcecff"
+			},
+			"glow": {
+				"default": "#86d2ff"
+			}
+		},
+		"presets": {
+			"whiteout": {
+				"radius": 5,
+				"snow": 1.8,
+				"visibility": 1.9,
+				"spindrift": 2,
+				"streaks": 0.8,
+				"hail": 0.4,
+				"air": "#eef6ff"
+			},
+			"polar vortex": {
+				"strength": 1.8,
+				"wind": 15,
+				"streaks": 1.6,
+				"visibility": 1.2,
+				"spindrift": 1.4,
+				"air": "#c8e2ff",
+				"glow": "#4f9dff"
+			},
+			"sleet": {
+				"hail": 2.6,
+				"snow": 0.7,
+				"visibility": 0.7,
+				"spindrift": 0.6,
+				"strength": 1.3,
+				"air": "#d2e6f0",
+				"glow": "#9fd8e6"
+			}
+		}
+	},
+	{
+		"id": "earth",
+		"name": "Earth",
+		"element": "earth",
+		"file": "lib/ultra-elements/src/spells/earth.js",
+		"forms": [
+			"Upheaval",
+			"Meteor"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.5,
+			"impact": 0.35,
+			"linger": 4.3
+		},
+		"size": [
+			"size",
+			"height",
+			"meteorSize"
+		],
+		"intensity": [
+			"debris",
+			"dust",
+			"crack",
+			"shake"
+		],
+		"colours": [
+			"rockColor",
+			"dustColor"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"height": {
+				"default": 2.4,
+				"range": [
+					0.8,
+					4.5,
+					0.01
+				]
+			},
+			"spikes": {
+				"default": 7,
+				"range": [
+					3,
+					12,
+					1
+				]
+			},
+			"stagger": {
+				"default": 0.03,
+				"range": [
+					0,
+					0.12,
+					0.001
+				]
+			},
+			"hold": {
+				"default": 3,
+				"range": [
+					0.5,
+					8,
+					0.1
+				]
+			},
+			"debris": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"dust": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"crack": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"shake": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"heat": {
+				"default": 0,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"glow": {
+				"default": 0,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"meteorSize": {
+				"default": 1,
+				"range": [
+					0.5,
+					2,
+					0.01
+				]
+			},
+			"arc": {
+				"default": 3.5,
+				"range": [
+					1,
+					8,
+					0.1
+				]
+			},
+			"meteorHeat": {
+				"default": 0.6,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"rim": {
+				"default": 6,
+				"range": [
+					0,
+					10,
+					1
+				]
+			},
+			"rockColor": {
+				"default": "#3b342d"
+			},
+			"dustColor": {
+				"default": "#696159"
+			}
+		},
+		"presets": {
+			"molten": {
+				"heat": 0.85,
+				"meteorHeat": 1,
+				"glow": 1,
+				"dustColor": "#4a3c35",
+				"rockColor": "#2e2622"
+			},
+			"desert": {
+				"dustColor": "#b39573",
+				"rockColor": "#6b5643",
+				"dust": 1.5,
+				"crack": 0.7
+			},
+			"tectonic": {
+				"spikes": 11,
+				"height": 3.4,
+				"size": 1.3,
+				"stagger": 0.045,
+				"shake": 1.4,
+				"debris": 1.4,
+				"meteorSize": 1.6,
+				"rim": 10
+			}
+		}
+	},
+	{
+		"id": "fissure",
+		"name": "Fissure",
+		"element": "earth",
+		"file": "lib/ultra-elements/src/spells/earth/fissure.js",
+		"forms": [
+			"Fissure"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 0.9,
+			"impact": 0.35,
+			"linger": 6
+		},
+		"size": [
+			"width",
+			"reach",
+			"depth"
+		],
+		"intensity": [
+			"intensity",
+			"debris"
+		],
+		"colours": [
+			"tint"
+		],
+		"settings": {
+			"width": {
+				"default": 0.42,
+				"range": [
+					0.15,
+					1,
+					0.01
+				]
+			},
+			"depth": {
+				"default": 1.1,
+				"range": [
+					0.4,
+					2.5,
+					0.01
+				]
+			},
+			"reach": {
+				"default": 9,
+				"range": [
+					3,
+					16,
+					0.1
+				]
+			},
+			"overshoot": {
+				"default": 1.6,
+				"range": [
+					0,
+					4,
+					0.05
+				]
+			},
+			"hold": {
+				"default": 4.2,
+				"range": [
+					1.5,
+					9,
+					0.1
+				]
+			},
+			"temperature": {
+				"default": 1350,
+				"range": [
+					900,
+					2600,
+					10
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"lips": {
+				"default": 5,
+				"range": [
+					0,
+					8,
+					1
+				]
+			},
+			"lipHeight": {
+				"default": 0.4,
+				"range": [
+					0.2,
+					1.8,
+					0.01
+				]
+			},
+			"unzip": {
+				"default": 0.2,
+				"range": [
+					0.02,
+					0.8,
+					0.01
+				]
+			},
+			"debris": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"steam": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"dust": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"shake": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#ffffff"
+			}
+		},
+		"presets": {
+			"obsidian rift": {
+				"temperature": 1100,
+				"width": 0.3,
+				"depth": 1.8,
+				"steam": 2,
+				"intensity": 1.3,
+				"lipHeight": 0.55
+			},
+			"cataclysm": {
+				"width": 0.75,
+				"reach": 13,
+				"lips": 8,
+				"lipHeight": 1.25,
+				"debris": 1.7,
+				"dust": 1.5,
+				"shake": 1.6,
+				"unzip": 0.32,
+				"hold": 5.5
+			},
+			"sulfur vent": {
+				"tint": "#8fb0ff",
+				"temperature": 2400,
+				"steam": 2.4,
+				"debris": 0.7,
+				"intensity": 0.8
+			}
+		}
+	},
+	{
+		"id": "lava-geyser",
+		"name": "Lava Geyser",
+		"element": "earth",
+		"file": "lib/ultra-elements/src/spells/earth/lava-geyser.js",
+		"forms": [
+			"Lava Geyser"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1.1,
+			"impact": 0.3,
+			"linger": 8
+		},
+		"size": [
+			"height",
+			"width"
+		],
+		"intensity": [
+			"intensity",
+			"surge",
+			"bombs"
+		],
+		"colours": [
+			"tint"
+		],
+		"settings": {
+			"height": {
+				"default": 6,
+				"range": [
+					2,
+					12,
+					0.1
+				]
+			},
+			"width": {
+				"default": 0.4,
+				"range": [
+					0.12,
+					0.8,
+					0.01
+				]
+			},
+			"duration": {
+				"default": 4,
+				"range": [
+					1.5,
+					9,
+					0.1
+				]
+			},
+			"temperature": {
+				"default": 1400,
+				"range": [
+					1000,
+					2600,
+					10
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"surge": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"bombs": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"spatter": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"plume": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"rim": {
+				"default": 7,
+				"range": [
+					0,
+					10,
+					1
+				]
+			},
+			"rimHeight": {
+				"default": 0.55,
+				"range": [
+					0.2,
+					1.6,
+					0.01
+				]
+			},
+			"shake": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#ffffff"
+			}
+		},
+		"presets": {
+			"hawaiian fountain": {
+				"height": 9.5,
+				"width": 0.26,
+				"surge": 0.5,
+				"bombs": 0.6,
+				"plume": 0.8,
+				"duration": 5.5,
+				"rimHeight": 0.45
+			},
+			"strombolian": {
+				"height": 5,
+				"width": 0.36,
+				"surge": 2.4,
+				"bombs": 2.2,
+				"plume": 1.7,
+				"spatter": 0.7,
+				"rimHeight": 0.85,
+				"rim": 9
+			},
+			"sulfur blue": {
+				"tint": "#7fa6ff",
+				"temperature": 1750,
+				"height": 4.2,
+				"plume": 1.8,
+				"bombs": 0.4,
+				"intensity": 0.9
+			}
+		}
+	},
+	{
+		"id": "wind",
+		"name": "Wind",
+		"element": "wind",
+		"file": "lib/ultra-elements/src/spells/wind.js",
+		"forms": [
+			"Cyclone",
+			"Wind Slash"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.9,
+			"impact": 0.3,
+			"linger": 3.5,
+			"sustain": 8
+		},
+		"size": [
+			"size",
+			"slashSize"
+		],
+		"intensity": [
+			"strength",
+			"dust",
+			"streaks"
+		],
+		"colours": [
+			"air",
+			"dustColor"
+		],
+		"settings": {
+			"strength": {
+				"default": 1,
+				"range": [
+					0.2,
+					2.5,
+					0.01
+				]
+			},
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"drift": {
+				"default": 3.5,
+				"range": [
+					0,
+					10,
+					0.1
+				]
+			},
+			"duration": {
+				"default": 3.5,
+				"range": [
+					1,
+					8,
+					0.1
+				]
+			},
+			"dust": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"debris": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"streaks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"refraction": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"slashSpeed": {
+				"default": 24,
+				"range": [
+					6,
+					50,
+					0.1
+				]
+			},
+			"slashSize": {
+				"default": 1,
+				"range": [
+					0.4,
+					2.5,
+					0.01
+				]
+			},
+			"tilt": {
+				"default": 50,
+				"range": [
+					0,
+					90,
+					1
+				]
+			},
+			"scratch": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"air": {
+				"default": "#dff4ff"
+			},
+			"dustColor": {
+				"default": "#7d6a55"
+			}
+		},
+		"presets": {
+			"dust devil": {
+				"size": 0.7,
+				"strength": 1.3,
+				"dust": 1.8,
+				"debris": 0.6,
+				"dustColor": "#b4875a",
+				"air": "#ffe9cf"
+			},
+			"gale": {
+				"size": 1.4,
+				"strength": 1.8,
+				"streaks": 2,
+				"refraction": 1.6,
+				"debris": 2.2,
+				"slashSize": 1.5,
+				"scratch": 1.6
+			},
+			"spirit wind": {
+				"air": "#8dffd6",
+				"dustColor": "#5f8f84",
+				"streaks": 2.4,
+				"dust": 0.5,
+				"refraction": 1.4
+			}
+		}
+	},
+	{
+		"id": "dust-devils",
+		"name": "Dust Devils",
+		"element": "wind",
+		"file": "lib/ultra-elements/src/spells/wind/dust-devils.js",
+		"forms": [
+			"Dust Devils"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 0.9,
+			"impact": 0.4,
+			"linger": 7.199999999999999
+		},
+		"size": [
+			"size",
+			"spread"
+		],
+		"intensity": [
+			"strength",
+			"dust",
+			"streaks"
+		],
+		"colours": [
+			"sand",
+			"air"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.5,
+					1.8,
+					0.01
+				]
+			},
+			"strength": {
+				"default": 1,
+				"range": [
+					0.3,
+					2.5,
+					0.01
+				]
+			},
+			"weave": {
+				"default": 1,
+				"range": [
+					0.2,
+					2.5,
+					0.01
+				]
+			},
+			"spread": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"duration": {
+				"default": 4.4,
+				"range": [
+					1.5,
+					9,
+					0.1
+				]
+			},
+			"dust": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"debris": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"streaks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"grit": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"refraction": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"tracks": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"sand": {
+				"default": "#a28b6c"
+			},
+			"air": {
+				"default": "#fff1dc"
+			}
+		},
+		"presets": {
+			"red planet": {
+				"sand": "#a3532c",
+				"air": "#ffcfae",
+				"grit": 0.4,
+				"tracks": 1.6,
+				"dust": 1.3
+			},
+			"ash devils": {
+				"sand": "#4b4743",
+				"air": "#d9dce6",
+				"grit": 0,
+				"debris": 0.4,
+				"dust": 1.4,
+				"streaks": 0.6
+			},
+			"autumn whirl": {
+				"sand": "#7c6a4c",
+				"air": "#fff6e0",
+				"debris": 2.8,
+				"dust": 0.55,
+				"size": 1.2,
+				"weave": 1.4
+			}
+		}
+	},
+	{
+		"id": "void",
+		"name": "Void",
+		"element": "void",
+		"file": "lib/ultra-elements/src/spells/void.js",
+		"forms": [
+			"Singularity",
+			"Rift"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 1,
+			"impact": 0.55,
+			"linger": 3.2
+		},
+		"size": [
+			"size"
+		],
+		"intensity": [
+			"gravity",
+			"disk",
+			"tendrils"
+		],
+		"colours": [
+			"edge",
+			"tint"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 6,
+				"range": [
+					2,
+					16,
+					0.1
+				]
+			},
+			"gravity": {
+				"default": 1,
+				"range": [
+					0.3,
+					3,
+					0.01
+				]
+			},
+			"lensing": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"disk": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"temperature": {
+				"default": 4800,
+				"range": [
+					2500,
+					20000,
+					10
+				]
+			},
+			"beaming": {
+				"default": 0.35,
+				"range": [
+					0,
+					0.95,
+					0.01
+				]
+			},
+			"tendrils": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"corruption": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"collapse": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"hold": {
+				"default": 2.6,
+				"range": [
+					0.8,
+					6,
+					0.1
+				]
+			},
+			"tint": {
+				"default": "#ffffff"
+			},
+			"edge": {
+				"default": "#9a4dff"
+			}
+		},
+		"presets": {
+			"gargantua": {
+				"temperature": 4600,
+				"beaming": 0.6,
+				"tendrils": 0.25,
+				"lensing": 1.6,
+				"size": 1.3,
+				"tint": "#ffd6a8"
+			},
+			"violet disk": {
+				"temperature": 14000,
+				"tint": "#9b62ff",
+				"edge": "#c070ff"
+			},
+			"abyssal": {
+				"temperature": 3400,
+				"tint": "#ff7088",
+				"edge": "#ff2a60",
+				"corruption": 2,
+				"tendrils": 1.8
+			}
+		}
+	},
+	{
+		"id": "portal",
+		"name": "Portal",
+		"element": "void",
+		"file": "lib/ultra-elements/src/spells/void/portal.js",
+		"forms": [
+			"Portal"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1.2,
+			"impact": 2.4,
+			"linger": 2
+		},
+		"size": [
+			"size",
+			"reach"
+		],
+		"intensity": [
+			"stream",
+			"sparks",
+			"swirl"
+		],
+		"colours": [
+			"rim",
+			"core"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.5,
+					1.6,
+					0.01
+				]
+			},
+			"reach": {
+				"default": 1,
+				"range": [
+					0.6,
+					1.8,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 16,
+				"range": [
+					6,
+					30,
+					0.1
+				]
+			},
+			"stream": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"sparks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"clarity": {
+				"default": 1,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"swirl": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"ripple": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"knockback": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"corruption": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"rim": {
+				"default": "#9a4dff"
+			},
+			"core": {
+				"default": "#efe4ff"
+			}
+		},
+		"presets": {
+			"event horizon": {
+				"rim": "#5a8cff",
+				"core": "#e4f0ff",
+				"ripple": 2.2,
+				"swirl": 0.6,
+				"sparks": 0.4
+			},
+			"ember ring": {
+				"rim": "#ff7a1a",
+				"core": "#fff0d8",
+				"sparks": 2.2,
+				"swirl": 1.4,
+				"corruption": 0.3
+			},
+			"abyss": {
+				"rim": "#ff2a60",
+				"core": "#ffd6e0",
+				"clarity": 0.55,
+				"swirl": 2,
+				"corruption": 2,
+				"stream": 1.6
+			}
+		}
+	},
+	{
+		"id": "light",
+		"name": "Light",
+		"element": "light",
+		"file": "lib/ultra-elements/src/spells/light.js",
+		"forms": [
+			"Judgment",
+			"Radiant Lance"
+		],
+		"shape": "beam",
+		"formShapes": {
+			"Judgment": "strike"
+		},
+		"timing": {
+			"charge": 1.3,
+			"impact": 0.55,
+			"linger": 3.4,
+			"sustain": 2
+		},
+		"size": [
+			"width",
+			"sigil",
+			"lance"
+		],
+		"intensity": [
+			"intensity",
+			"glow"
+		],
+		"colours": [
+			"color",
+			"core"
+		],
+		"settings": {
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"width": {
+				"default": 2,
+				"range": [
+					0.5,
+					4,
+					0.01
+				]
+			},
+			"sigil": {
+				"default": 1.5,
+				"range": [
+					0.6,
+					3,
+					0.01
+				]
+			},
+			"tilt": {
+				"default": 18,
+				"range": [
+					0,
+					25,
+					0.1
+				]
+			},
+			"rays": {
+				"default": 0.85,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"scatter": {
+				"default": 0.35,
+				"range": [
+					0,
+					0.9,
+					0.01
+				]
+			},
+			"motes": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"feathers": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"glow": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"storm": {
+				"default": 1,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"dust": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"molten": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"lance": {
+				"default": 0.6,
+				"range": [
+					0.2,
+					1.5,
+					0.01
+				]
+			},
+			"core": {
+				"default": "#fff4dc"
+			},
+			"color": {
+				"default": "#ffb84a"
+			}
+		},
+		"presets": {
+			"dawn": {
+				"core": "#fff0e8",
+				"color": "#ff8a5c",
+				"tilt": 16,
+				"rays": 0.9
+			},
+			"seraphic": {
+				"core": "#ffffff",
+				"color": "#bcd4ff",
+				"intensity": 1.25,
+				"feathers": 2.2,
+				"scatter": 0.5
+			},
+			"solar flare": {
+				"core": "#fff3c0",
+				"color": "#ff9a12",
+				"width": 3.2,
+				"intensity": 1.5,
+				"rays": 1,
+				"motes": 1.8
+			}
+		}
+	},
+	{
+		"id": "solar-flare",
+		"name": "Solar Flare",
+		"element": "light",
+		"file": "lib/ultra-elements/src/spells/light/solar-flare.js",
+		"forms": [
+			"Solar Flare"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.9,
+			"impact": 0.5,
+			"linger": 2.8
+		},
+		"size": [
+			"size"
+		],
+		"intensity": [
+			"intensity",
+			"sparks"
+		],
+		"colours": [
+			"color",
+			"core"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.5,
+					2,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 8,
+				"range": [
+					3,
+					20,
+					0.1
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"pulse": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"loops": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"flare": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"granules": {
+				"default": 8,
+				"range": [
+					2,
+					14,
+					0.1
+				]
+			},
+			"corona": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"sparks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"glow": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"core": {
+				"default": "#ffd27a"
+			},
+			"color": {
+				"default": "#ff560c"
+			}
+		},
+		"presets": {
+			"red dwarf": {
+				"core": "#ffd2a0",
+				"color": "#ff3a12",
+				"size": 0.8,
+				"speed": 6,
+				"pulse": 1.6,
+				"granules": 5
+			},
+			"blue giant": {
+				"core": "#f0f5ff",
+				"color": "#4a86ff",
+				"size": 1.35,
+				"speed": 7,
+				"flare": 1.25,
+				"granules": 11,
+				"corona": 1.4
+			},
+			"white dwarf": {
+				"core": "#ffffff",
+				"color": "#ffd090",
+				"size": 0.65,
+				"speed": 12,
+				"intensity": 1.6,
+				"pulse": 2,
+				"flare": 0.8
+			}
+		}
+	},
+	{
+		"id": "aurora-veil",
+		"name": "Aurora Veil",
+		"element": "light",
+		"file": "lib/ultra-elements/src/spells/light/aurora-veil.js",
+		"forms": [
+			"Aurora Veil"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1.2,
+			"impact": 1,
+			"linger": 5.5
+		},
+		"size": [
+			"height",
+			"length"
+		],
+		"intensity": [
+			"intensity",
+			"light"
+		],
+		"colours": [
+			"color",
+			"top"
+		],
+		"settings": {
+			"curtains": {
+				"default": 3,
+				"range": [
+					1,
+					4,
+					1
+				]
+			},
+			"length": {
+				"default": 18,
+				"range": [
+					8,
+					26,
+					0.1
+				]
+			},
+			"height": {
+				"default": 8,
+				"range": [
+					4,
+					14,
+					0.1
+				]
+			},
+			"base": {
+				"default": 3.4,
+				"range": [
+					2.5,
+					8,
+					0.05
+				]
+			},
+			"fold": {
+				"default": 1,
+				"range": [
+					0,
+					2.5,
+					0.01
+				]
+			},
+			"rays": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 1,
+				"range": [
+					0.2,
+					3,
+					0.01
+				]
+			},
+			"duration": {
+				"default": 5.5,
+				"range": [
+					2,
+					12,
+					0.1
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0.1,
+					3,
+					0.01
+				]
+			},
+			"light": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"precipitation": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"veil": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"color": {
+				"default": "#19ff66"
+			},
+			"top": {
+				"default": "#b23cff"
+			},
+			"fringe": {
+				"default": "#ff3fa8"
+			}
+		},
+		"presets": {
+			"substorm": {
+				"curtains": 4,
+				"fold": 1.7,
+				"rays": 1.6,
+				"speed": 2,
+				"intensity": 1.4,
+				"light": 1.3
+			},
+			"quiet arc": {
+				"curtains": 1,
+				"length": 24,
+				"fold": 0.45,
+				"rays": 0.6,
+				"speed": 0.45,
+				"duration": 8,
+				"intensity": 0.8
+			},
+			"blood aurora": {
+				"color": "#ff2b47",
+				"top": "#a01cff",
+				"fringe": "#ffb0d0",
+				"rays": 1.3
+			}
+		}
+	},
+	{
+		"id": "supernova",
+		"name": "Supernova",
+		"element": "light",
+		"file": "lib/ultra-elements/src/spells/light/supernova.js",
+		"forms": [
+			"Supernova"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1.8,
+			"impact": 1.4,
+			"linger": 3.4
+		},
+		"size": [
+			"size"
+		],
+		"intensity": [
+			"intensity",
+			"sparks"
+		],
+		"colours": [
+			"star",
+			"shock"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.6,
+					1.6,
+					0.01
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"collapse": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"blast": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"fireball": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"soot": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"rays": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"lensing": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"pulsar": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"sparks": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"smoke": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"granules": {
+				"default": 3,
+				"range": [
+					1.5,
+					10,
+					0.1
+				]
+			},
+			"star": {
+				"default": "#ffb468"
+			},
+			"limb": {
+				"default": "#d42a08"
+			},
+			"shock": {
+				"default": "#bfe9ff"
+			},
+			"filament": {
+				"default": "#ff4a2a"
+			},
+			"void": {
+				"default": "#8a3dff"
+			}
+		},
+		"presets": {
+			"betelgeuse": {
+				"star": "#ffb468",
+				"limb": "#d42a08",
+				"shock": "#bfe9ff",
+				"filament": "#ff4a2a",
+				"void": "#8a3dff",
+				"size": 1,
+				"granules": 3,
+				"pulsar": 1,
+				"collapse": 1,
+				"soot": 1
+			},
+			"blue hypergiant": {
+				"star": "#eef3ff",
+				"limb": "#3d6dff",
+				"shock": "#ffffff",
+				"filament": "#ff4fb0",
+				"void": "#5a3dff",
+				"size": 1.2,
+				"granules": 5,
+				"pulsar": 1.4,
+				"soot": 0.7
+			},
+			"kilonova": {
+				"star": "#fff2c4",
+				"limb": "#ff9a10",
+				"shock": "#fff0c8",
+				"filament": "#ffc040",
+				"void": "#ff5a2a",
+				"size": 0.8,
+				"granules": 2.2,
+				"pulsar": 0,
+				"collapse": 1.5,
+				"rays": 1.6,
+				"soot": 1.4
+			}
+		}
+	},
+	{
+		"id": "acid",
+		"name": "Acid",
+		"element": "acid",
+		"file": "lib/ultra-elements/src/spells/acid.js",
+		"forms": [
+			"Toxic Bloom",
+			"Corrosion Cloud"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.6,
+			"impact": 0.3,
+			"linger": 6
+		},
+		"size": [
+			"size"
+		],
+		"intensity": [
+			"glow",
+			"drips",
+			"bubbles"
+		],
+		"colours": [
+			"color",
+			"fogColor"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2.5,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 10,
+				"range": [
+					4,
+					30,
+					0.1
+				]
+			},
+			"glow": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"drips": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"fog": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"bubbles": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"iridescence": {
+				"default": 0.35,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"corrosion": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"cloudTime": {
+				"default": 8,
+				"range": [
+					3,
+					15,
+					0.1
+				]
+			},
+			"color": {
+				"default": "#7cff2a"
+			},
+			"fogColor": {
+				"default": "#bfd895"
+			},
+			"cloudColor": {
+				"default": "#bfe08a"
+			}
+		},
+		"presets": {
+			"bile": {
+				"color": "#d8ff3a",
+				"fogColor": "#dcd8a0",
+				"cloudColor": "#e0eb86",
+				"glow": 0.85
+			},
+			"venom": {
+				"color": "#c24dff",
+				"fogColor": "#d2c0dc",
+				"cloudColor": "#b98ad8",
+				"bubbles": 1.6
+			},
+			"radioactive": {
+				"color": "#a0ff00",
+				"fogColor": "#c8e2a8",
+				"cloudColor": "#b0f070",
+				"glow": 2.2,
+				"fog": 0.7,
+				"iridescence": 0.15
+			}
+		}
+	},
+	{
+		"id": "plague-swarm",
+		"name": "Plague Swarm",
+		"element": "acid",
+		"file": "lib/ultra-elements/src/spells/acid/plague-swarm.js",
+		"forms": [
+			"Plague Swarm"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 2,
+			"impact": 1.8,
+			"linger": 8
+		},
+		"size": [
+			"size",
+			"radius"
+		],
+		"intensity": [
+			"glow",
+			"corrosion"
+		],
+		"colours": [
+			"color",
+			"color2"
+		],
+		"settings": {
+			"count": {
+				"default": 1,
+				"range": [
+					0.1,
+					1,
+					0.01
+				]
+			},
+			"size": {
+				"default": 1,
+				"range": [
+					0.5,
+					2.5,
+					0.01
+				]
+			},
+			"speed": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"glow": {
+				"default": 1,
+				"range": [
+					0,
+					4,
+					0.01
+				]
+			},
+			"sync": {
+				"default": 0.6,
+				"range": [
+					0,
+					1,
+					0.01
+				]
+			},
+			"flock": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"turbulence": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"radius": {
+				"default": 1.15,
+				"range": [
+					0.7,
+					2.2,
+					0.01
+				]
+			},
+			"landing": {
+				"default": 0.32,
+				"range": [
+					0,
+					0.8,
+					0.01
+				]
+			},
+			"hold": {
+				"default": 3,
+				"range": [
+					1,
+					6,
+					0.1
+				]
+			},
+			"corrosion": {
+				"default": 1,
+				"range": [
+					0,
+					1.5,
+					0.01
+				]
+			},
+			"color": {
+				"default": "#a8ff2a"
+			},
+			"color2": {
+				"default": "#f0ff58"
+			},
+			"chitin": {
+				"default": "#262619"
+			}
+		},
+		"presets": {
+			"locusts": {
+				"glow": 0.3,
+				"size": 1.35,
+				"speed": 1.25,
+				"sync": 0,
+				"landing": 0.5,
+				"chitin": "#3d3420",
+				"color": "#c8ff3a",
+				"turbulence": 1.2
+			},
+			"fireflies": {
+				"glow": 2.4,
+				"size": 0.7,
+				"count": 0.5,
+				"sync": 0.9,
+				"speed": 0.6,
+				"turbulence": 0.6,
+				"landing": 0.15,
+				"color": "#d6ff4a",
+				"color2": "#ffd34a",
+				"chitin": "#121210"
+			},
+			"blight": {
+				"color": "#6dff3a",
+				"color2": "#3affb4",
+				"glow": 1.5,
+				"corrosion": 1.45,
+				"hold": 4.5,
+				"radius": 1.35
+			}
+		}
+	},
+	{
+		"id": "arcane",
+		"name": "Arcane",
+		"element": "arcane",
+		"file": "lib/ultra-elements/src/spells/arcane.js",
+		"forms": [
+			"Arcane Barrage",
+			"Aegis"
+		],
+		"shape": "projectile",
+		"timing": {
+			"charge": 0.55,
+			"impact": 0.12,
+			"linger": 1.1
+		},
+		"size": [
+			"shield",
+			"spread"
+		],
+		"intensity": [
+			"intensity",
+			"sparkles"
+		],
+		"colours": [
+			"color",
+			"glow"
+		],
+		"settings": {
+			"missiles": {
+				"default": 8,
+				"range": [
+					1,
+					12,
+					1
+				]
+			},
+			"speed": {
+				"default": 24,
+				"range": [
+					8,
+					45,
+					0.1
+				]
+			},
+			"homing": {
+				"default": 4,
+				"range": [
+					2,
+					8,
+					0.1
+				]
+			},
+			"spread": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"weave": {
+				"default": 0.6,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"sparkles": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0.1,
+					3,
+					0.01
+				]
+			},
+			"shield": {
+				"default": 1.45,
+				"range": [
+					0.8,
+					3,
+					0.01
+				]
+			},
+			"duration": {
+				"default": 6,
+				"range": [
+					1,
+					20,
+					0.1
+				]
+			},
+			"hex": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"distortion": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"pulse": {
+				"default": 0.6,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"anchor": {
+				"default": "target",
+				"range": [
+					"target",
+					"caster"
+				]
+			},
+			"color": {
+				"default": "#ff4fd8"
+			},
+			"core": {
+				"default": "#ffe3fb"
+			},
+			"glow": {
+				"default": "#b347ff"
+			}
+		},
+		"presets": {
+			"frost ward": {
+				"color": "#4fc8ff",
+				"core": "#e6faff",
+				"glow": "#2f5bff"
+			},
+			"golden aegis": {
+				"color": "#ffb54a",
+				"core": "#fff4dc",
+				"glow": "#ff6a1a",
+				"hex": 1.4
+			},
+			"void swarm": {
+				"color": "#a35cff",
+				"core": "#f1e6ff",
+				"glow": "#2a0a6e",
+				"missiles": 12,
+				"weave": 1.3,
+				"homing": 5.5
+			}
+		}
+	},
+	{
+		"id": "starfall",
+		"name": "Starfall",
+		"element": "arcane",
+		"file": "lib/ultra-elements/src/spells/arcane/starfall.js",
+		"forms": [
+			"Starfall"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1.1,
+			"impact": 2,
+			"linger": 2.4
+		},
+		"size": [
+			"size",
+			"radius"
+		],
+		"intensity": [
+			"intensity",
+			"sparkles"
+		],
+		"colours": [
+			"color",
+			"glow"
+		],
+		"settings": {
+			"stars": {
+				"default": 18,
+				"range": [
+					3,
+					24,
+					1
+				]
+			},
+			"radius": {
+				"default": 3.2,
+				"range": [
+					1.5,
+					6,
+					0.01
+				]
+			},
+			"duration": {
+				"default": 1.6,
+				"range": [
+					0.6,
+					3,
+					0.01
+				]
+			},
+			"height": {
+				"default": 8.5,
+				"range": [
+					6,
+					16,
+					0.1
+				]
+			},
+			"angle": {
+				"default": 26,
+				"range": [
+					0,
+					50,
+					0.5
+				]
+			},
+			"speed": {
+				"default": 30,
+				"range": [
+					12,
+					60,
+					0.1
+				]
+			},
+			"trail": {
+				"default": 6,
+				"range": [
+					1,
+					9,
+					0.01
+				]
+			},
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2.5,
+					0.01
+				]
+			},
+			"sparkles": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0.1,
+					3,
+					0.01
+				]
+			},
+			"sky": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"night": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"color": {
+				"default": "#ff4fd8"
+			},
+			"core": {
+				"default": "#fff1fc"
+			},
+			"glow": {
+				"default": "#7a3dff"
+			}
+		},
+		"presets": {
+			"meteor shower": {
+				"stars": 24,
+				"duration": 1.3,
+				"angle": 38,
+				"speed": 44,
+				"trail": 6,
+				"size": 0.75
+			},
+			"grand comets": {
+				"stars": 6,
+				"size": 1.7,
+				"trail": 7.5,
+				"speed": 24,
+				"duration": 1.8,
+				"angle": 18
+			},
+			"twilight": {
+				"color": "#b06cff",
+				"core": "#f3e8ff",
+				"glow": "#3b2dff",
+				"sky": 1.3,
+				"night": 1.4
+			}
+		}
+	},
+	{
+		"id": "frozen-lightning",
+		"name": "Frozen Lightning",
+		"element": "hybrid",
+		"file": "lib/ultra-elements/src/spells/hybrid/frozen-lightning.js",
+		"forms": [
+			"Frozen Lightning"
+		],
+		"shape": "strike",
+		"timing": {
+			"charge": 0.8,
+			"impact": 2,
+			"linger": 2.4
+		},
+		"size": [
+			"thickness",
+			"spurs"
+		],
+		"intensity": [
+			"intensity",
+			"glints"
+		],
+		"colours": [
+			"glow",
+			"tint"
+		],
+		"settings": {
+			"intensity": {
+				"default": 1,
+				"range": [
+					0.1,
+					3,
+					0.01
+				]
+			},
+			"branches": {
+				"default": 6,
+				"range": [
+					0,
+					8,
+					1
+				]
+			},
+			"jag": {
+				"default": 0.12,
+				"range": [
+					0.04,
+					0.25,
+					0.005
+				]
+			},
+			"thickness": {
+				"default": 1,
+				"range": [
+					0.4,
+					2.5,
+					0.01
+				]
+			},
+			"spurs": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"freeze": {
+				"default": 1,
+				"range": [
+					0.4,
+					3,
+					0.01
+				]
+			},
+			"hold": {
+				"default": 1,
+				"range": [
+					0.2,
+					3,
+					0.01
+				]
+			},
+			"shatter": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"mist": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"glints": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"frost": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"core": {
+				"default": "#e6f4ff"
+			},
+			"glow": {
+				"default": "#4fc8ff"
+			},
+			"tint": {
+				"default": "#a8dcff"
+			}
+		},
+		"presets": {
+			"aurora": {
+				"glow": "#3dffb0",
+				"core": "#e8fff4",
+				"tint": "#b8ffe8"
+			},
+			"void ice": {
+				"glow": "#9a5bff",
+				"core": "#f2e8ff",
+				"tint": "#c8b8ff",
+				"jag": 0.16
+			},
+			"glacier": {
+				"glow": "#2f7dff",
+				"tint": "#5fa8ff",
+				"thickness": 1.5,
+				"spurs": 1.6,
+				"branches": 8
+			}
+		}
+	},
+	{
+		"id": "fire-tornado",
+		"name": "Fire Tornado",
+		"element": "hybrid",
+		"file": "lib/ultra-elements/src/spells/hybrid/fire-tornado.js",
+		"forms": [
+			"Fire Tornado"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1,
+			"impact": 0.3,
+			"linger": 4.5
+		},
+		"size": [
+			"size",
+			"height"
+		],
+		"intensity": [
+			"intensity",
+			"flames"
+		],
+		"colours": [
+			"tint"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.4,
+					2,
+					0.01
+				]
+			},
+			"height": {
+				"default": 1,
+				"range": [
+					0.4,
+					1.8,
+					0.01
+				]
+			},
+			"spin": {
+				"default": 1,
+				"range": [
+					0.2,
+					2.5,
+					0.01
+				]
+			},
+			"duration": {
+				"default": 4.5,
+				"range": [
+					1.5,
+					10,
+					0.1
+				]
+			},
+			"wander": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"temperature": {
+				"default": 1900,
+				"range": [
+					900,
+					6500,
+					10
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"flames": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"embers": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"smoke": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"dust": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"haze": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"scorch": {
+				"default": 1,
+				"range": [
+					0,
+					2,
+					0.01
+				]
+			},
+			"tint": {
+				"default": "#ffffff"
+			}
+		},
+		"presets": {
+			"firestorm": {
+				"size": 1.35,
+				"height": 1.3,
+				"spin": 1.4,
+				"embers": 1.8,
+				"smoke": 1.5,
+				"duration": 6
+			},
+			"blue whirl": {
+				"temperature": 6500,
+				"tint": "#8fb8ff",
+				"smoke": 0.2,
+				"dust": 0.4,
+				"spin": 1.6,
+				"height": 0.8
+			},
+			"hell spout": {
+				"temperature": 1450,
+				"tint": "#ff5a4a",
+				"smoke": 2.2,
+				"flames": 1.4,
+				"haze": 1.6
+			}
+		}
+	},
+	{
+		"id": "black-flame",
+		"name": "Black Flame",
+		"element": "hybrid",
+		"file": "lib/ultra-elements/src/spells/hybrid/black-flame.js",
+		"forms": [
+			"Black Flame"
+		],
+		"shape": "area",
+		"timing": {
+			"charge": 1,
+			"impact": 3,
+			"linger": 2.2
+		},
+		"size": [
+			"size",
+			"height"
+		],
+		"intensity": [
+			"intensity",
+			"embers"
+		],
+		"colours": [
+			"rim",
+			"core"
+		],
+		"settings": {
+			"size": {
+				"default": 1,
+				"range": [
+					0.5,
+					1.8,
+					0.01
+				]
+			},
+			"height": {
+				"default": 1,
+				"range": [
+					0.5,
+					1.8,
+					0.01
+				]
+			},
+			"intensity": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"absorb": {
+				"default": 1,
+				"range": [
+					0.2,
+					2,
+					0.01
+				]
+			},
+			"embers": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"swirl": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"smoke": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"corruption": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"knockback": {
+				"default": 1,
+				"range": [
+					0,
+					3,
+					0.01
+				]
+			},
+			"rim": {
+				"default": "#8a3dff"
+			},
+			"core": {
+				"default": "#efdcff"
+			}
+		},
+		"presets": {
+			"hellmouth": {
+				"rim": "#ff3a1e",
+				"core": "#ffd9b8",
+				"embers": 1.6,
+				"swirl": 1.4
+			},
+			"soul fire": {
+				"rim": "#2dffc0",
+				"core": "#dafff2",
+				"absorb": 0.8,
+				"smoke": 0.5
+			},
+			"eclipse": {
+				"rim": "#ffae3a",
+				"core": "#fff3d6",
+				"absorb": 1.6,
+				"intensity": 1.4,
+				"height": 1.25,
+				"embers": 0.6
+			}
+		}
+	}
+]

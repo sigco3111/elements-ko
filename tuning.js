@@ -71,20 +71,20 @@ export const POWER = {
 // Settings many spells share, as agent controls: a multiplier of the spell's own value, for any
 // spell that has the setting. [control id, setting, label, hint]
 export const SHARED = [
-	['tune.height', 'height', 'Height', 'How tall, for spells that rise.'],
-	['tune.duration', 'duration', 'Duration', 'How long it lasts, for spells that last.'],
-	['tune.hold', 'hold', 'Hold', 'How long it stays before it ends, for spells that hold.'],
-	['tune.flight', 'speed', 'Flight speed', 'How fast it travels, for spells that fly.'],
-	['tune.haze', 'haze', 'Heat haze', 'How much it bends the air behind it.'],
-	['tune.smoke', 'smoke', 'Smoke', 'How much smoke it gives off.'],
-	['tune.dust', 'dust', 'Dust', 'How much dust it raises.'],
-	['tune.mist', 'mist', 'Mist', 'How much mist it gives off.'],
-	['tune.sparks', 'sparks', 'Sparks', 'How many sparks it throws.'],
-	['tune.embers', 'embers', 'Embers', 'How many embers it throws.'],
-	['tune.debris', 'debris', 'Debris', 'How much rock and rubble it throws.'],
-	['tune.scorch', 'scorch', 'Scorch', 'How much it burns the floor.'],
-	['tune.frost', 'frost', 'Frost', 'How far frost spreads on the floor.'],
-	['tune.glints', 'glints', 'Glints', 'How many ice glints catch the light.'],
+	['tune.height', 'height', '높이', '솟아오르는 주문의 높이.'],
+	['tune.duration', 'duration', '지속 시간', '유지되는 주문의 지속 시간.'],
+	['tune.hold', 'hold', '유지', '머무는 주문이 끝나기까지의 시간.'],
+	['tune.flight', 'speed', '비행 속도', '날아가는 주문의 속도.'],
+	['tune.haze', 'haze', '아지랑이', '뒤의 공기를 일그러뜨리는 정도.'],
+	['tune.smoke', 'smoke', '연기', '연기를 내뿜는 정도.'],
+	['tune.dust', 'dust', '먼지', '먼지를 일으키는 정도.'],
+	['tune.mist', 'mist', '안개', '안개를 내뿜는 정도.'],
+	['tune.sparks', 'sparks', '불똥', '불똥을 튀기는 정도.'],
+	['tune.embers', 'embers', '불씨', '불씨를 튀기는 정도.'],
+	['tune.debris', 'debris', '파편', '돌·잔해를 튀기는 정도.'],
+	['tune.scorch', 'scorch', '그을음', '바닥을 태우는 정도.'],
+	['tune.frost', 'frost', '서리', '바닥에 서리가 퍼지는 범위.'],
+	['tune.glints', 'glints', '얼음 반짝임', '빛을 받아 반짝이는 얼음 결정의 수.'],
 ];
 
 // The settings that are the spell's main colour and its second one.
